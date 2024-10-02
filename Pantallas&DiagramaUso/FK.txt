@@ -1,0 +1,26 @@
+Foreing Keys
+-------------------------
+
+Churros N--------------1 Tipos
+  (tipoID)		  (tipoID)
+
+
+
+Churros N--------------1 Sabores
+  (saborID)		  (saborID)
+
+
+
+Pedido N---------------1 Churros
+  (churroID)		  (churroID)
+
+
+
+Pedido N---------------1 Bebidas
+  (bebidaID)		  (bebidaID)
+
+
+
+Pedido N---------------1 Estado
+  (estadoID)		  (estadoID)
+
