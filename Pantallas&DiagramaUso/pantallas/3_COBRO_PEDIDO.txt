@@ -1,0 +1,22 @@
+--------------------------CHURRERÍA PRETTY WOMAN----------------------------
+		Dulce tentación, perfecto en cada ocasión.
+----------------------------------------------------------------------------
+
+			-COBRO DE PEDIDO-
+-------------------------------------------------------------------------
+	 Total a pagar:   
+			14,20€    
+
+
+Elija forma de pago:
+
+	1. Pago en efectivo
+	2. Pago con targeta
+
+	Método de pago seleccionado: Pago con targeta
+	
+		| 1.Cobrar | | 2. Cancelar pedido |
+		
+			Se ha realizado el pago exitosamente
+
+				| 1. Volver al menú principal |

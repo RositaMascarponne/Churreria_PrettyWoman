@@ -1,0 +1,9 @@
+cd Desktop/Repositorio/TheCorner/Dumps
+git init
+git config --global user.name 'RositaMascarponne'
+git config --global user.mail 'rosat020@thecorner.cat'
+git add .
+git status
+git commit -m 'Dump universidad con datos'
+git log
+git push

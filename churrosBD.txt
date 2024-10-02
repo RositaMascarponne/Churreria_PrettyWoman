@@ -1,0 +1,20 @@
+CHURROS- Churrería Pretty Woman
+
+Nombre equipo: (Churrowomen Coder)
+
+
+-Churros (sabor, Nombre Churro precio)
+
+-Tipos(clasico, porra, relleno, especial)
+
+-Sabores(clasico, fresa, vainilla, chocolate negro, chocolate con leche, chocolate negro,chocolate con avellanas, pistacho, oreo)
+
+-Bebidas (agua, cola, limonada, te, zumo, chocolate, suizo, cerveza)
+
+-EstadoPedido (Preparando, Listo, Entregado)
+
+(Si da tiempo...)
+-Ventas (churros, bebidas)
+
+
+
