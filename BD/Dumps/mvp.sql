@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `churreria_pretty_woman` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `churreria_pretty_woman`;
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.36, for Linux (x86_64)
 --
 -- Host: localhost    Database: churreria_pretty_woman
 -- ------------------------------------------------------
--- Server version	8.0.39
+-- Server version	8.4.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -53,7 +51,11 @@ CREATE TABLE `churros` (
   `churroPrecio` decimal(2,0) NOT NULL,
   `tipoID` int NOT NULL,
   `saborID` int NOT NULL,
-  PRIMARY KEY (`churroID`)
+  PRIMARY KEY (`churroID`),
+  KEY `FK_tipo_id_idx` (`tipoID`),
+  KEY `FK_sabor_id_idx` (`saborID`),
+  CONSTRAINT `FK_sabor_id` FOREIGN KEY (`saborID`) REFERENCES `sabores` (`saborID`),
+  CONSTRAINT `FK_tipo_id` FOREIGN KEY (`tipoID`) REFERENCES `tipos` (`tipoID`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -100,8 +102,10 @@ CREATE TABLE `pedidos` (
   `pedidoID` int NOT NULL AUTO_INCREMENT,
   `churroID` int NOT NULL,
   `bebidaID` int NOT NULL,
-  `estadoID` int DEFAULT NULL,
-  PRIMARY KEY (`pedidoID`)
+  `estado_ID` int DEFAULT NULL,
+  PRIMARY KEY (`pedidoID`),
+  KEY `FK_estado_id_idx` (`estado_ID`),
+  CONSTRAINT `FK_estado_id` FOREIGN KEY (`estado_ID`) REFERENCES `estados` (`estadoID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -112,6 +116,58 @@ CREATE TABLE `pedidos` (
 LOCK TABLES `pedidos` WRITE;
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pedidos_bebidas`
+--
+
+DROP TABLE IF EXISTS `pedidos_bebidas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pedidos_bebidas` (
+  `pedido_id` int NOT NULL,
+  `bebida_id` int NOT NULL,
+  PRIMARY KEY (`pedido_id`,`bebida_id`),
+  KEY `FK_PB_BEBIDAS_idx` (`bebida_id`),
+  CONSTRAINT `FK_PB_BEBIDAS` FOREIGN KEY (`bebida_id`) REFERENCES `bebidas` (`bebidaID`),
+  CONSTRAINT `FK_PB_PEDIDOS` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos` (`pedidoID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pedidos_bebidas`
+--
+
+LOCK TABLES `pedidos_bebidas` WRITE;
+/*!40000 ALTER TABLE `pedidos_bebidas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedidos_bebidas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `pedidos_churros`
+--
+
+DROP TABLE IF EXISTS `pedidos_churros`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `pedidos_churros` (
+  `pedido_id` int NOT NULL,
+  `churro_id` int NOT NULL,
+  PRIMARY KEY (`churro_id`,`pedido_id`),
+  KEY `FK_PC_PEDIDOS_idx` (`pedido_id`),
+  CONSTRAINT `FK_PC_CHURROS` FOREIGN KEY (`churro_id`) REFERENCES `churros` (`churroID`),
+  CONSTRAINT `FK_PC_PEDIDOS` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos` (`pedidoID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pedidos_churros`
+--
+
+LOCK TABLES `pedidos_churros` WRITE;
+/*!40000 ALTER TABLE `pedidos_churros` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pedidos_churros` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -159,6 +215,10 @@ LOCK TABLES `tipos` WRITE;
 /*!40000 ALTER TABLE `tipos` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tipos` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'churreria_pretty_woman'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -169,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-02 18:32:29
+-- Dump completed on 2024-10-03 17:13:51
