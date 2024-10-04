@@ -9,7 +9,7 @@ public class Churro {
     //Atributos de la clase churro
     private int churroId;
     private String churroNombre;
-    private String churroPrecio;
+    private float churroPrecio;
     private int tipoId;
     private int saborId;
 
@@ -18,7 +18,7 @@ public class Churro {
 
     }
 
-    public Churro(int churroId, String churroNombre, String churroPrecio, int tipoId, int saborId) {
+    public Churro(int churroId, String churroNombre, float churroPrecio, int tipoId, int saborId) {
         this.churroId = churroId;
         this.churroNombre = churroNombre;
         this.churroPrecio = churroPrecio;
@@ -35,7 +35,7 @@ public class Churro {
         return this.churroNombre;
     }
 
-    public String getChurroPrecio() {
+    public float getChurroPrecio() {
         return this.churroPrecio;
     }
 
@@ -56,7 +56,7 @@ public class Churro {
         this.churroNombre = churroNombre;
     }
 
-    public void setChurroPrecio(String churroPrecio) {
+    public void setChurroPrecio(float churroPrecio) {
         this.churroPrecio = churroPrecio;
     }
 

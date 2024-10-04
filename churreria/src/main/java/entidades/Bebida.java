@@ -1,20 +1,23 @@
 package entidades;
+
 /**
  *
  * @author luisa
  */
 public class Bebida {
+
     private int bebidaId;
     private String bebidaNombre;
-    
-    //Constructores
+    private float bebidaPrecio;
 
+    //Constructores
     public Bebida() {
     }
 
-    public Bebida( int bebidaId,String bebidaNombre) {
-        this.bebidaId=bebidaId;
+    public Bebida(int bebidaId, String bebidaNombre, float bebidaPrecio) {
+        this.bebidaId = bebidaId;
         this.bebidaNombre = bebidaNombre;
+        this.bebidaPrecio = bebidaPrecio;
     }
     //Getters
 
@@ -25,19 +28,28 @@ public class Bebida {
     public String getBebidaNombre() {
         return bebidaNombre;
     }
-    //Setters
-    public void setBebidaId(int bebidaId){
-        this.bebidaId=bebidaId;
+
+    public float getBebidaPrecio(float bebidaPrecio) {
+        return this.bebidaPrecio;
     }
-    
-    public void setBebidaNombre(String bebidaNombre){
-        this.bebidaNombre=bebidaNombre;
+
+    //Setters
+    public void setBebidaId(int bebidaId) {
+        this.bebidaId = bebidaId;
+    }
+
+    public void setBebidaNombre(String bebidaNombre) {
+        this.bebidaNombre = bebidaNombre;
+    }
+
+    public void setBebidaPrecio(float bebidaPrecio) {
+        this.bebidaPrecio = bebidaPrecio;
     }
     //Métodos
 
     @Override
     public String toString() {
-        return "Bebida{" + "bebidaId=" + bebidaId + ", bebidaNombre=" + bebidaNombre + '}';
+        return "Bebida{" + "bebidaId=" + bebidaId + ", bebidaNombre=" + bebidaNombre + ", bebidaPrecio=" +bebidaPrecio+ '}';
     }
-    
+
 }
