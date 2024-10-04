@@ -12,7 +12,8 @@ public class Bebida {
     public Bebida() {
     }
 
-    public Bebida(String bebidaNombre) {
+    public Bebida( int bebidaId,String bebidaNombre) {
+        this.bebidaId=bebidaId;
         this.bebidaNombre = bebidaNombre;
     }
     //Getters
