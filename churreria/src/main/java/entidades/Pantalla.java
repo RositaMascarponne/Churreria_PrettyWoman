@@ -11,6 +11,7 @@ public abstract class Pantalla {
     public static final String TIPO_CHURRO = "-Tipo churro:";
     public static final String  SABOR = "-Sabores: ";
     public static final String BEBIDA = "-Bebidas:";
+     public static final String RESUMEN_PEDDIO = "Resumen:";
     
     //Métodos
     
