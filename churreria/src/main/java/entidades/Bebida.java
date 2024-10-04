@@ -24,6 +24,14 @@ public class Bebida {
     public String getBebidaNombre() {
         return bebidaNombre;
     }
+    //Setters
+    public void setBebidaId(int bebidaId){
+        this.bebidaId=bebidaId;
+    }
+    
+    public void setBebidaNombre(String bebidaNombre){
+        this.bebidaNombre=bebidaNombre;
+    }
     //Métodos
 
     @Override
