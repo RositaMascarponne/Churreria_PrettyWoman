@@ -4,8 +4,9 @@
  */
 package Pantallas;
 
-import logica.Pantalla;
+import logica.*;
 import entidades.*;
+
 import java.util.Scanner;
 
 /**
@@ -24,11 +25,14 @@ public class PantallaPedido {
 
         System.out.println("                     ----------------------------------------------------------- ");
         String pBienvenida = String.format("\n%60s\n", Pantalla.ENCABEZADO_PEDIDO);
-        
+
         System.out.println(pBienvenida);
         System.out.println("                     ----------------------------------------------------------- ");
         System.out.println("");
-        
+        System.out.println("                                " + Pantalla.BOTON_CONFIRMAR + " " + Pantalla.BOTON_VOLVER);
+
+        Menu menuPedidos = new Menu();
+        menuPedidos.mostrarBotonesPedido();
 
     }
 }

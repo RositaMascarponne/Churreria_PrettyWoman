@@ -63,5 +63,42 @@ public class Menu {
             }
         
     }
+    
+        public void mostrarBotonesPedido() {
+        Scanner sc = new Scanner(System.in);
+        int opcion = 0;
+        
+            System.out.println("\n\n ------------------ Elige una opcion:");
+            try {
+                opcion = sc.nextInt();
+                sc.nextLine();
+                switch (opcion) {
+                    case 1:
+                        // A 1.Confirmar (a cobro)
+                        PantallaCobro pantalla1 = new PantallaCobro();
+                        pantalla1.mostrar();
+                        break;
+                    case 2:
+                        // A 2.Volver (A pantalla de bienvenida)
+                        PantallaBienvenida pantalla2 = new PantallaBienvenida();
+                        pantalla2.mostrar();
+                        break;
+                        
+                    default:
+                        System.out.println("A ver, que esto solo tiene 2 opciones. No me lies, por dios."); // Manejo de opción no válida
+                        mostrarMenuPrincipal(); // Volver a elegir opción
+
+                }
+
+            } /*catch(SQLException e){
+                e.printStackTrace();
+                System.out.println("Jopelines, la base de datos parece estar cascadilla");
+            }*/ catch (InputMismatchException e) {
+                System.out.println("Pues como que algo no has escrito bien eh? nah, pero tu vuelve a probar, tranqui");
+            }
+        
+    }
+    
+    
 
 }

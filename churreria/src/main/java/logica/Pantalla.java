@@ -17,7 +17,11 @@ public abstract class Pantalla {
     public static final String TIPO_CHURRO = "Tipo churro:";
     public static final String SABOR = "-Sabores: ";
     public static final String BEBIDA = "-Bebidas:";
-    public static final String RESUMEN_PEDDIO = "Resumen:";
+    public static final String RESUMEN_PEDIDO = "Resumen:";
+    public static final String BOTON_CONFIRMAR = "| 1.Confirmar |";
+    public static final String BOTON_VOLVER = "| 2.Volver |";
+
+
 
     //Métodos
     public static String[] getMenuBienvenida() {

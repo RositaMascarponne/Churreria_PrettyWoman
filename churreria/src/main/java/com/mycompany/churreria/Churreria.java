@@ -29,8 +29,8 @@ public class Churreria {
             PantallaBienvenida pantallaBienvenida= new PantallaBienvenida();
             pantallaBienvenida.mostrar();
             
-            Menu menu=new Menu();
-            menu.mostrarMenuPrincipal();
+            Menu menuPrincipal=new Menu();
+            menuPrincipal.mostrarMenuPrincipal();
             
 
             //CIERRE CONEXIÓN A BASE DE DATOS        
