@@ -3,7 +3,7 @@
  */
 package com.mycompany.churreria;
 
-import Pantallas.PantallaCobro;
+import Pantallas.*;
 import entidades.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,8 +25,8 @@ public class Churreria {
             Connection conn = DriverManager.getConnection(URL, "root", "root");
 
             //Mostrando Menú en pantalla
-            PantallaCobro pantallaCobro = new PantallaCobro();
-            pantallaCobro.mostrar();
+            PantallaEntrega pantallaEntrega= new PantallaEntrega();
+            pantallaEntrega.mostrar();
 
             //CIERRE CONEXIÓN A BASE DE DATOS        
             conn.close();
