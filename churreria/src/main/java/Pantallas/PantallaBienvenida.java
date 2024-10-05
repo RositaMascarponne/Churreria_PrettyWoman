@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package logica;
+package Pantallas;
 
 import entidades.*;
 import java.util.Scanner;
@@ -22,7 +22,9 @@ public class PantallaBienvenida {
 
         System.out.println("                     ----------------------------------------------------------- ");
         String pBienvenida = String.format("\n%60s\n", Pantalla.ENCABEZADO_BIENVENIDA);
+        
         System.out.println(pBienvenida);
+        System.out.println("                     ----------------------------------------------------------- ");
         System.out.println("");
 
         // Mostrando opciones del Menú

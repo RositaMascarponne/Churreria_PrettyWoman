@@ -11,6 +11,9 @@ public abstract class Pantalla {
     public static final String SCRIPT = "Dulce tentación, perfecto en cada ocasión";
     public static final String ENCABEZADO_BIENVENIDA = "PANTALLA DE BIENVENIDA";
     public static final String ENCABEZADO_PEDIDO = "INGRESO DE PEDIDO";
+    public static final String ENCABEZADO_COBRO = "COBRO DE PEDIDO";
+    public static final String ENCABEZADO_ESTADO = "ESTADO DE PEDIDOS";
+    public static final String ENCABEZADO_ENTREGAR = "ENTREGAR PEDIDOS";
     public static final String TIPO_CHURRO = "Tipo churro:";
     public static final String SABOR = "-Sabores: ";
     public static final String BEBIDA = "-Bebidas:";
