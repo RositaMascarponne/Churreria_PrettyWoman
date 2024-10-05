@@ -25,7 +25,7 @@ public class Churreria {
             Menu menu = new Menu(conn);
             menu.mostrarMenu();
             */
-                    Churro churrito=new Churro();
+                    Churro churrito=new Churro(2,"Churros con chocolate",3.80f,1,2);
                     System.out.println(churrito);
             conn.close();
             System.out.println("Conexión cerrada");
