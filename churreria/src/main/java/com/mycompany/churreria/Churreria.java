@@ -25,8 +25,8 @@ public class Churreria {
             Connection conn = DriverManager.getConnection(URL, "root", "root");
 
             //Mostrando Menú en pantalla
-            PantallaBienvenida pantallaBienvenida = new PantallaBienvenida();
-            pantallaBienvenida.mostrar();
+            PantallaPedido pantallaPedido = new PantallaPedido();
+            pantallaPedido.mostrar();
 
             //CIERRE CONEXIÓN A BASE DE DATOS        
             conn.close();
