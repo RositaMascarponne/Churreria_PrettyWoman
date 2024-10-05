@@ -77,11 +77,13 @@ public class Menu {
                         // A 1.Confirmar (a cobro)
                         PantallaCobro pantalla1 = new PantallaCobro();
                         pantalla1.mostrar();
+                        
                         break;
                     case 2:
                         // A 2.Volver (A pantalla de bienvenida)
                         PantallaBienvenida pantalla2 = new PantallaBienvenida();
                         pantalla2.mostrar();
+                        mostrarMenuPrincipal();
                         break;
                         
                     default:
