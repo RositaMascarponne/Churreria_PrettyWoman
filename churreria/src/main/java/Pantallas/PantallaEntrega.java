@@ -4,7 +4,7 @@
  */
 package Pantallas;
 
-import entidades.Pantalla;
+import logica.Pantalla;
 
 /**
  *

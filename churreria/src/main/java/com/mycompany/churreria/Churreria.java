@@ -5,6 +5,7 @@ package com.mycompany.churreria;
 
 import Pantallas.*;
 import entidades.*;
+import logica.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -25,8 +26,12 @@ public class Churreria {
             Connection conn = DriverManager.getConnection(URL, "root", "root");
 
             //Mostrando Menú en pantalla
-            PantallaEntrega pantallaEntrega= new PantallaEntrega();
-            pantallaEntrega.mostrar();
+            PantallaBienvenida pantallaBienvenida= new PantallaBienvenida();
+            pantallaBienvenida.mostrar();
+            
+            Menu menu=new Menu();
+            menu.elegirOpcion();
+            
 
             //CIERRE CONEXIÓN A BASE DE DATOS        
             conn.close();
