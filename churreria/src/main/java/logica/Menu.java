@@ -24,7 +24,7 @@ public class Menu {
     public void mostrarMenuPrincipal() {
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
-        while (opcion != 4) {
+        
             System.out.println("\n\n ------------------ Elige una opcion:");
             try {
                 opcion = sc.nextInt();
@@ -61,7 +61,7 @@ public class Menu {
             }*/ catch (InputMismatchException e) {
                 System.out.println("Pues como que algo no has escrito bien eh? nah, pero tu vuelve a probar, tranqui");
             }
-        }
+        
     }
 
 }
