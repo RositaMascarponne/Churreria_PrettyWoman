@@ -4,6 +4,7 @@
  */
 package Pantallas;
 
+import logica.Menu;
 import logica.Pantalla;
 
 /**
@@ -11,6 +12,9 @@ import logica.Pantalla;
  * @author Rosita
  */
 public class PantallaCobro {
+    
+    
+    
        public void mostrar() {
         // Mostrando Menú en pantalla
         String company = String.format("\n%80s\n", "------------------" + Pantalla.COMPANY + "-------------------");
@@ -25,6 +29,10 @@ public class PantallaCobro {
         System.out.println(pBienvenida);
         System.out.println("                     ----------------------------------------------------------- ");
         System.out.println("");
+        System.out.println("                                " + Pantalla.BOTON_COBRAR + " " + Pantalla.BOTON_CANCELAR_PEDIDO);
+        
+        Menu menuCobros = new Menu();
+        menuCobros.mostrarBotonesCobro();
         
 
     } 

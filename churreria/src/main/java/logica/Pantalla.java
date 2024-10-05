@@ -18,8 +18,15 @@ public abstract class Pantalla {
     public static final String SABOR = "-Sabores: ";
     public static final String BEBIDA = "-Bebidas:";
     public static final String RESUMEN_PEDIDO = "Resumen:";
+    public static final String PAGO_OK = "El pago se ha realizado exitosamente.";
+    public static final String PAGO_CANCEL = "¿No pagas? Pues te quedas sin churros.";
+    
+    //BOTONES:
     public static final String BOTON_CONFIRMAR = "| 1.Confirmar |";
     public static final String BOTON_VOLVER = "| 2.Volver |";
+    public static final String BOTON_COBRAR = "| 1.Cobrar pedido |";
+    public static final String BOTON_CANCELAR_PEDIDO = "| 2.Cancelar pedido |";
+    
 
 
 
