@@ -30,7 +30,7 @@ public class Churreria {
             pantallaBienvenida.mostrar();
             
             Menu menu=new Menu();
-            menu.elegirOpcion();
+            menu.mostrarMenuPrincipal();
             
 
             //CIERRE CONEXIÓN A BASE DE DATOS        

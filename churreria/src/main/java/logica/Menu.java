@@ -21,34 +21,47 @@ public class Menu {
     private Connection conn;
     private Churro churro;
 
-    public void elegirOpcion() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Elige una opción: ");
-        int opcion = scanner.nextInt();
+    public void mostrarMenuPrincipal() {
+        Scanner sc = new Scanner(System.in);
+        int opcion = 0;
+        while (opcion != 4) {
+            System.out.println("\n\n ------------------ Elige una opcion:");
+            try {
+                opcion = sc.nextInt();
+                sc.nextLine();
+                switch (opcion) {
+                    case 1:
+                        // A 1.Pedidos
+                        PantallaPedido pantalla1 = new PantallaPedido();
+                        pantalla1.mostrar();
+                        break;
+                    case 2:
+                        // A 2.Estados
+                        PantallaEstado pantalla2 = new PantallaEstado();
+                        pantalla2.mostrar();
+                        break;
+                    case 3:
+                        //  A 3.Entrega
+                        PantallaEntrega pantalla3 = new PantallaEntrega();
+                        pantalla3.mostrar();
+                        break;
+                    case 4:
+                        System.out.println("Saliendo de la churreria...");
 
-        switch (opcion) {
-            case 1 -> {
-                // Lógica para Pantalla 1
-                PantallaPedido pantalla1 = new PantallaPedido(); // Crear una instancia de Pantalla1
-                pantalla1.mostrar(); // Llamar al método mostrar de Pantalla1
-            }
-            case 2 -> {
-                // Lógica para Pantalla 2
-                PantallaEstado pantalla2 = new PantallaEstado(); // Crear una instancia de Pantalla2
-                pantalla2.mostrar(); // Llamar al método mostrar de Pantalla2
-            }
-            case 3 -> {
-                // Lógica para Pantalla 3
-                PantallaEntrega pantalla3 = new PantallaEntrega(); // Crear una instancia de Pantalla3
-                pantalla3.mostrar(); // Llamar al método mostrar de Pantalla3
-            }
-            case 4 ->
-                System.exit(0); // Opción para salir de la aplicación
-            default -> {
-                System.out.println("Opción no válida. Intenta de nuevo."); // Manejo de opción no válida
-                elegirOpcion(); // Volver a elegir opción
+                        break;
+                    default:
+                        System.out.println("A ver, que esto solo tiene 4 opciones. No me lies, por dios."); // Manejo de opción no válida
+                        mostrarMenuPrincipal(); // Volver a elegir opción
+
+                }
+
+            } /*catch(SQLException e){
+                e.printStackTrace();
+                System.out.println("Jopelines, la base de datos parece estar cascadilla");
+            }*/ catch (InputMismatchException e) {
+                System.out.println("Pues como que algo no has escrito bien eh? nah, pero tu vuelve a probar, tranqui");
             }
         }
-
     }
+
 }
