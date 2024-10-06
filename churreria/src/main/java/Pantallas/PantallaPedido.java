@@ -28,6 +28,9 @@ public class PantallaPedido {
 
         System.out.println(pBienvenida);
         System.out.println("                     ----------------------------------------------------------- ");
+        
+        ResumenPedido resumenSample=new ResumenPedido();
+        System.out.println(resumenSample.resumen);
         System.out.println("");
         System.out.println("                                " + Pantalla.BOTON_CONFIRMAR + " " + Pantalla.BOTON_VOLVER);
 

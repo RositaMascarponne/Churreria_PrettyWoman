@@ -10,5 +10,6 @@ Pantallas\PantallaBienvenida.class
 Pantallas\PantallaEstado.class
 entidades\Sabor.class
 Pantallas\PantallaCobro.class
+logica\ResumenPedido.class
 logica\Pantalla.class
 Pantallas\PantallaEntrega.class
