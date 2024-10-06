@@ -24,6 +24,7 @@ public abstract class Pantalla {
     //BOTONES:
     public static final String BOTON_CONFIRMAR = "| 1.Confirmar |";
     public static final String BOTON_VOLVER = "| 2.Volver |";
+    public static final String BOTON_VOLVER_2 = "| 1.Volver al Menú Principal |";
     public static final String BOTON_COBRAR = "| 1.Cobrar pedido |";
     public static final String BOTON_CANCELAR_PEDIDO = "| 2.Cancelar pedido |";
     

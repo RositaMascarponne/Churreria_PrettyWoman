@@ -107,6 +107,51 @@ public class Menu {
     public void mostrarBotonesCobro() {
         Scanner sc = new Scanner(System.in);
         int opcion = 0;
+        boolean continuarEnPantallaCobro = true;
+        while (continuarEnPantallaCobro) {
+            System.out.println("\n\n ------------------ Elige una opcion:");
+            try {
+                opcion = sc.nextInt();
+                sc.nextLine();
+                switch (opcion) {
+                    case 1:
+                        // A 1.Cobrar (El estado del pedido pasa: En preparacion.¿Se crea en este instante el pedido?)
+                        System.out.println("            " + Pantalla.PAGO_OK);
+                        
+                        mostrarSalirAlMenuPrincipal();
+
+                        break;
+                    case 2:
+                        // A 2.Cancelar Pedido (A pantalla de bienvenida y nada más. No hay pedido. No money, no churros)
+                        System.out.println("                " + Pantalla.PAGO_CANCEL);
+                        PantallaBienvenida pantalla2 = new PantallaBienvenida();
+                        pantalla2.mostrar();
+                        continuarEnPantallaCobro = false;
+                        mostrarMenuPrincipal();
+                        break;
+
+                    default:
+                        System.out.println("A ver, que esto solo tiene 2 opciones. No me lies, por dios."); // Manejo de opción no válida
+
+                        mostrarMenuPrincipal(); // Volver a elegir opción
+
+                }
+
+            } /*catch(SQLException e){
+                e.printStackTrace();
+                System.out.println("Jopelines, la base de datos parece estar cascadilla");
+            }*/ catch (InputMismatchException e) {
+                System.out.println("Pues como que algo no has escrito bien eh? nah, pero tu vuelve a probar, tranqui");
+                sc.nextLine();
+            }
+        }
+
+    }
+    //El boton VOLVER AL MENÚ PRINCIPAL de la PANTALLA DE COBRO(en switch para darle flexibilidad ante futuras actualizaciones):
+
+    public void mostrarSalirAlMenuPrincipal() {
+        Scanner sc = new Scanner(System.in);
+        int opcion = 0;
 
         System.out.println("\n\n ------------------ Elige una opcion:");
         try {
@@ -114,19 +159,11 @@ public class Menu {
             sc.nextLine();
             switch (opcion) {
                 case 1:
-                    // A 1.Cobrar (a Pantalla Bienvenida y el estado del pedido pasa: En preparacion.¿Se crea en este instante el pedido?)
-                    System.out.println("            " + Pantalla.PAGO_OK);
+                    // A 1.Volver al menú principal
                     PantallaBienvenida pantalla1 = new PantallaBienvenida();
                     pantalla1.mostrar();
                     mostrarMenuPrincipal();
 
-                    break;
-                case 2:
-                    // A 2.Cancelar Pedido (A pantalla de bienvenida y nada más. No hay pedido. No money, no churros)
-                    System.out.println("                "+Pantalla.PAGO_CANCEL);
-                    PantallaBienvenida pantalla2 = new PantallaBienvenida();
-                    pantalla2.mostrar();
-                    mostrarMenuPrincipal();
                     break;
 
                 default:

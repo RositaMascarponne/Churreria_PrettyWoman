@@ -4,6 +4,7 @@
  */
 package Pantallas;
 
+import logica.Menu;
 import logica.Pantalla;
 
 /**
@@ -25,6 +26,9 @@ public class PantallaEntrega {
         System.out.println(pBienvenida);
         System.out.println("                     ----------------------------------------------------------- ");
         System.out.println("");
+        System.out.println("                               " + Pantalla.BOTON_VOLVER_2);
+       Menu menuEntrega=new Menu();
+       menuEntrega.mostrarSalirAlMenuPrincipal();
         
 
     } 

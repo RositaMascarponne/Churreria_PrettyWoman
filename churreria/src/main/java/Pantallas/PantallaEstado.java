@@ -4,7 +4,8 @@
  */
 package Pantallas;
 
-import logica.Pantalla;
+import logica.*;
+import entidades.*;
 
 /**
  *
@@ -26,6 +27,10 @@ public class PantallaEstado {
         System.out.println(pBienvenida);
         System.out.println("                     ----------------------------------------------------------- ");
         System.out.println("");
+        System.out.println("                               " + Pantalla.BOTON_VOLVER_2);
+       Menu menuEstados=new Menu();
+       menuEstados.mostrarSalirAlMenuPrincipal();
+        
 
     }
 }
