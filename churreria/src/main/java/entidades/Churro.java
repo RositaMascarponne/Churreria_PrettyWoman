@@ -1,5 +1,12 @@
 package entidades;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author luisa
@@ -69,6 +76,8 @@ public class Churro {
     }
 
     //Métodos
+    
+
     @Override
     public String toString() {
         return "Churro{" + "churroId=" + churroId + ",churroNombre=" + churroNombre + ",churroPrecio=" + churroPrecio + '}';
