@@ -3,14 +3,9 @@
  */
 package com.mycompany.churreria;
 
-import Pantallas.*;
-import entidades.*;
-import logica.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  *
@@ -22,16 +17,9 @@ public class Churreria {
         //CONEXIÓN A LA BASE DE DATOS
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String URL = "jdbc:mysql://localhost:3308/churreria_pretty_woman";
+            String URL = "jdbc:mysql://localhost:3306/churreria_pretty_woman";
             Connection conn = DriverManager.getConnection(URL, "root", "root");
 
-            //Mostrando Menú en pantalla
-            PantallaBienvenida pantallaBienvenida= new PantallaBienvenida();
-            pantallaBienvenida.mostrar();
-            
-            Menu menuPrincipal=new Menu();
-            menuPrincipal.mostrarMenuPrincipal();
-            
 
             //CIERRE CONEXIÓN A BASE DE DATOS        
             conn.close();
