@@ -31,7 +31,7 @@ public class PantallaCobro {
         System.out.println("");
         System.out.println("                                " + Pantalla.BOTON_COBRAR + " " + Pantalla.BOTON_CANCELAR_PEDIDO);
         
-        System.out.println("   hello                             " + Pantalla.BOTON_VOLVER_2);
+        System.out.println("                                " + Pantalla.BOTON_VOLVER_2);
         
         Menu menuCobros = new Menu();
         menuCobros.mostrarBotonesCobro();

@@ -28,7 +28,14 @@ public class PantallaPedido {
 
         System.out.println(pBienvenida);
         System.out.println("                     ----------------------------------------------------------- ");
-        
+                // Mostrar el menú de tipos de churros
+        MenuDisplay.mostrarTipoChurro();
+
+        // Mostrar el menú de sabores
+        MenuDisplay.mostrarSabores();
+
+        // Mostrar el menú de bebidas
+        MenuDisplay.mostrarBebidas();
         ResumenPedido resumenSample=new ResumenPedido();
         System.out.println(resumenSample.resumen);
         System.out.println("");
