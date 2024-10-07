@@ -22,7 +22,7 @@ public class Churreria {
         //CONEXIÓN A LA BASE DE DATOS
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String URL = "jdbc:mysql://localhost:3306/churreria_pretty_woman";
+            String URL = "jdbc:mysql://localhost:3308/churreria_pretty_woman";
             Connection conn = DriverManager.getConnection(URL, "root", "root");
             
                     // Mostrando Menú en pantalla
@@ -46,7 +46,7 @@ public class Churreria {
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-            System.out.println("Se ha producido un error en la conexión.");
+            System.out.println("Se ha producido un error en la conexión. Puede que no estes en el puerto correcto eh? ¿Pero lo has cambiado?¿Seguro eh? ");
         }
     }
 }

@@ -16,21 +16,22 @@ public class Churro {
     //Atributos de la clase churro
     private int churroId;
     private String churroNombre;
+    private int churroCantidad;
     private float churroPrecio;
-    private int tipoId;
-    private int saborId;
+    private float precioUnitario;
 
     //Constructores
     public Churro() {
 
     }
 
-    public Churro(int churroId, String churroNombre, float churroPrecio, int tipoId, int saborId) {
+    public Churro(int churroId, String churroNombre, int churroCantidad, float churroPrecio, float precioUnitario) {
         this.churroId = churroId;
         this.churroNombre = churroNombre;
         this.churroPrecio = churroPrecio;
-        this.tipoId = tipoId;
-        this.saborId = saborId;
+        this.churroCantidad = churroCantidad;
+        this.precioUnitario = precioUnitario;
+
     }
     //Getters
 
@@ -45,18 +46,13 @@ public class Churro {
     public float getChurroPrecio() {
         return this.churroPrecio;
     }
-
-    public int getTipoId() {
-        return this.tipoId;
+    
+    public int getChurroCantidad(){
+        return this.churroCantidad;
     }
 
-    public int getSaborId() {
-        return this.saborId;
-    }
-
-    //Setters
-    public void setSaborID(int saborId) {
-        this.saborId = saborId;
+    public void setChurroId(int churroId) {
+        this.churroId = churroId;
     }
 
     public void setChurroNombre(String churroNombre) {
@@ -67,16 +63,32 @@ public class Churro {
         this.churroPrecio = churroPrecio;
     }
 
-    public void setTipoId(int tipoId) {
-        this.tipoId = tipoId;
-    }
-
-    public void setSaborId(int saborId) {
-        this.saborId = saborId;
+    public float getPrecioUnitario() {
+        return precioUnitario;
     }
 
     //Métodos
+    public float getPrecioTotal() {
+        return churroCantidad * precioUnitario;
+    }
     
+    // Método para cargar churros desde la base de datos
+    public void cargarDesdeBaseDeDatos(Connection conexion, int id) throws SQLException {
+        String consulta = "SELECT nombre, precio_unitario FROM churros WHERE id = ?";
+        try (PreparedStatement stmt = conexion.prepareStatement(consulta)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            
+            if (rs.next()) {
+                this.churroId = id;
+                this.churroNombre = rs.getString("nombre");
+                this.precioUnitario = rs.getFloat("precio_unitario");
+                this.churroCantidad = 1; // Por defecto 1, pero se puede cambiar según el pedido
+            } else {
+                throw new SQLException("Churro con ID " + id + " no encontrado.");
+            }
+        }
+    }
 
     @Override
     public String toString() {
