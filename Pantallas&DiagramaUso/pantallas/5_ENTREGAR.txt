@@ -7,8 +7,8 @@
 nº de pedido:0002A
 
 	 | Producto                       | Cantidad |
-	 | Porras clásico (4uds.)   	  |	3    |
-	 | Suizo   	                  |	3    |
+	 | Porras clásico (4uds.)   	  |	    3    |
+	 | Suizo   	                      | 	3    |
 
 							| 1.ENTREGAR | 
 

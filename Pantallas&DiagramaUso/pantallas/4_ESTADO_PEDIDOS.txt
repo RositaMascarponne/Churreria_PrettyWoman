@@ -10,8 +10,8 @@
 nº de pedido:0003A
 
 	 | Producto                       | Cantidad |
-	 | Churros con chocolate(4uds.)   |	2    |
-	 | Suizo   	                  |	1    |
+	 | Churros con chocolate(4uds.)   |	    2    |
+	 | Suizo   	                      |	    1    |
 
 								Estado: En preparación
 
@@ -21,8 +21,8 @@ nº de pedido:0003A
 nº de pedido:0002A
 
 	 | Producto                       | Cantidad |
-	 | Porras clásico (4uds.)   	  |	3    |
-	 | Suizo   	                  |	3    |
+	 | Porras clásico (4uds.)   	  |	    3    |
+	 | Suizo   	                      |	    3    |
 
 								Estado: Listo
 
@@ -32,8 +32,8 @@ nº de pedido:0002A
 nº de pedido:0001A
 
 	 | Producto                       | Cantidad |
-	 | Churros Fresa (4uds.)   	  |	1    |
-	 | Limonada   	                  |	1    |
+	 | Churros Fresa (4uds.)   	      | 	1    |
+	 | Limonada   	                  |	    1    |
 
 								Estado: Entregado
 
