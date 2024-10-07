@@ -37,6 +37,8 @@ public class PantallaCobro {
         menuCobros.mostrarBotonesCobro();
         
         System.out.println("                               " + Pantalla.BOTON_VOLVER_2);
+        menuCobros.mostrarSalirAlMenuPrincipal();
+        
         
         
 

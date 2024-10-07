@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class Menu {
 
     private Connection conn;
-    private Churro churro;
+    //private Churro churro;
 
     //El menu de la PANTALLA DE BIENVENIDA:
     public void mostrarMenuPrincipal() {
