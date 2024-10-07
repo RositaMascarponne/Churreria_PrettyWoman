@@ -19,14 +19,14 @@ public class PantallaBienvenida {
         String company = String.format("\n%80s\n", "------------------CHURRERIA PRETTY WOMAN-------------------");
         System.out.print(company);
 
-        String script = String.format("Dulce tentación, perfecto en cada ocasión");
+        String script = String.format("%70s", "Dulce tentación, perfecto en cada ocasión");
         System.out.println(script);
 
-        System.out.println("                     ----------------------------------------------------------- ");
-        String pBienvenida = String.format("-----PANTALLA DE BIENVENIDA-----");
+        System.out.println("                     -----------------------------------------------------------\n ");
+        String pBienvenida = String.format("%60s", "-PANTALLA DE BIENVENIDA-");
         
         System.out.println(pBienvenida);
-        System.out.println("                     ----------------------------------------------------------- ");
+        System.out.println("                     -----------------------------------------------------------\n ");
 
         // Mostrando opciones del Menú
          String[] menu = {"1. Ingresar Pedido", "2. Estado de Pedidos", "3. Entregar Pedidos", "4. Salir"};
