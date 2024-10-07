@@ -15,21 +15,20 @@ import java.util.Scanner;
 public class PantallaBienvenida {
         public void mostrar() {
         // Mostrando Menú en pantalla
-        String company = String.format("\n%80s\n", "------------------" + Pantalla.COMPANY + "-------------------");
+        String company = String.format("\n%80s\n", "------------------CHURRERIA PRETTY WOMAN-------------------");
         System.out.print(company);
 
-        String script = String.format("%70s", Pantalla.SCRIPT);
+        String script = String.format("Dulce tentación, perfecto en cada ocasión");
         System.out.println(script);
 
         System.out.println("                     ----------------------------------------------------------- ");
-        String pBienvenida = String.format("\n%60s\n", Pantalla.ENCABEZADO_BIENVENIDA);
+        String pBienvenida = String.format("-----PANTALLA DE BIENVENIDA-----");
         
         System.out.println(pBienvenida);
         System.out.println("                     ----------------------------------------------------------- ");
-        System.out.println("");
 
         // Mostrando opciones del Menú
-        String[] menu = Pantalla.getMenuBienvenida();
+         String[] menu = {"1. Ingresar Pedido", "2. Estado de Pedidos", "3. Entregar Pedidos", "4. Salir"};
         String menuFormateado;
 
         for (int i = 0; i < menu.length; i++) {

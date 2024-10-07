@@ -5,7 +5,7 @@ package logica;
  * @author luisa
  */
 public abstract class Pantalla {
-
+/*
     //Atributos de la class Pantalla
     public static final String COMPANY = "CHURRERÍA PRETTY WOMAN";
     public static final String SCRIPT = "Dulce tentación, perfecto en cada ocasión";
@@ -51,11 +51,11 @@ public abstract class Pantalla {
         String[] menu = {"1.Agua ", "2.Limonada ", "3.Cola", "4.Zumo", "5.Té con limón", "6.Infusiones", "7.Agua con gas", "8.Suizo", "9.Cerveza"};
         return menu;
     }
-*/
+*//*
     public static String[] getResumenPedido() {
         String[] resumen = {" | Producto     ", "| Cantidad |", "Precio Unitario|", "Precio total"};
 
         return resumen;
     }
-
+*/
 }

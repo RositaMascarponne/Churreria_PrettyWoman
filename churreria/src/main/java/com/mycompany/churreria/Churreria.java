@@ -24,6 +24,11 @@ public class Churreria {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String URL = "jdbc:mysql://localhost:3308/churreria_pretty_woman";
             Connection conn = DriverManager.getConnection(URL, "root", "root");
+            
+                    // Mostrando Menú en pantalla
+
+                    
+
 
             //Mostrando Menú en pantalla
             PantallaBienvenida pantallaBienvenida= new PantallaBienvenida();
@@ -31,6 +36,8 @@ public class Churreria {
             
             Menu menuPrincipal=new Menu();
             menuPrincipal.mostrarMenuPrincipal();
+            
+            
             
 
             //CIERRE CONEXIÓN A BASE DE DATOS        

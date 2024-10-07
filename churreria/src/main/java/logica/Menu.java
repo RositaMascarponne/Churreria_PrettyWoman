@@ -116,14 +116,14 @@ public class Menu {
                 switch (opcion) {
                     case 1:
                         // A 1.Cobrar (El estado del pedido pasa: En preparacion.¿Se crea en este instante el pedido?)
-                        System.out.println("            " + Pantalla.PAGO_OK);
+                        System.out.println("El pago se realizó de maravilla");
                         
                         mostrarSalirAlMenuPrincipal();
 
                         break;
                     case 2:
                         // A 2.Cancelar Pedido (A pantalla de bienvenida y nada más. No hay pedido. No money, no churros)
-                        System.out.println("                " + Pantalla.PAGO_CANCEL);
+                        System.out.println("No pagas, no churros");
                         PantallaBienvenida pantalla2 = new PantallaBienvenida();
                         pantalla2.mostrar();
                         continuarEnPantallaCobro = false;

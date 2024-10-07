@@ -16,27 +16,23 @@ public class PantallaCobro {
     
     
        public void mostrar() {
-        // Mostrando Menú en pantalla
-        String company = String.format("\n%80s\n", "------------------" + Pantalla.COMPANY + "-------------------");
-        System.out.print(company);
 
-        String script = String.format("%70s", Pantalla.SCRIPT);
-        System.out.println(script);
 
-        System.out.println("                     ----------------------------------------------------------- ");
-        String pBienvenida = String.format("\n%60s\n", Pantalla.ENCABEZADO_COBRO);
+        
+        String pBienvenida = String.format("-----PANTALLA DE COBRO-----");
         
         System.out.println(pBienvenida);
-        System.out.println("                     ----------------------------------------------------------- ");
-        System.out.println("");
-        System.out.println("                                " + Pantalla.BOTON_COBRAR + " " + Pantalla.BOTON_CANCELAR_PEDIDO);
         
-        System.out.println("                                " + Pantalla.BOTON_VOLVER_2);
+        System.out.println("");
+        System.out.println("1.COBRAR            2.CANCELAR PEDIDO");
+        
+        
         
         Menu menuCobros = new Menu();
+        System.out.println("3.VOLVER AL MENU PRINCIPAL");
         menuCobros.mostrarBotonesCobro();
         
-        System.out.println("                               " + Pantalla.BOTON_VOLVER_2);
+        System.out.println("3.VOLVER AL MENU PRINCIPAL");
         menuCobros.mostrarSalirAlMenuPrincipal();
         
         

@@ -14,20 +14,13 @@ import entidades.*;
 public class PantallaEstado {
 
     public void mostrar() {
-        // Mostrando Menú en pantalla
-        String company = String.format("\n%80s\n", "------------------" + Pantalla.COMPANY + "-------------------");
-        System.out.print(company);
 
-        String script = String.format("%70s", Pantalla.SCRIPT);
-        System.out.println(script);
-
-        System.out.println("                     ----------------------------------------------------------- ");
-        String pBienvenida = String.format("\n%60s\n", Pantalla.ENCABEZADO_ESTADO);
+        String pBienvenida = String.format("-----PANTALLA DE ESTADO-----");
 
         System.out.println(pBienvenida);
         System.out.println("                     ----------------------------------------------------------- ");
         System.out.println("");
-        System.out.println("                               " + Pantalla.BOTON_VOLVER_2);
+        System.out.println("            3.VOLVER AL MENÚ PRINCIPAL");
        Menu menuEstados=new Menu();
        menuEstados.mostrarSalirAlMenuPrincipal();
         

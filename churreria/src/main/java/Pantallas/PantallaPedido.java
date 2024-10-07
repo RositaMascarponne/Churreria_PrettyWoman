@@ -16,23 +16,17 @@ import java.util.Scanner;
 public class PantallaPedido {
 
     public void mostrar() {
-        // Mostrando Menú en pantalla
-        String company = String.format("\n%80s\n", "------------------" + Pantalla.COMPANY + "-------------------");
-        System.out.print(company);
 
-        String script = String.format("%70s", Pantalla.SCRIPT);
-        System.out.println(script);
-
-        System.out.println("                     ----------------------------------------------------------- ");
-        String pBienvenida = String.format("\n%60s\n", Pantalla.ENCABEZADO_PEDIDO);
+        
+        String pBienvenida = String.format("-----INGRESO DE PEDIDO-----");
 
         System.out.println(pBienvenida);
-        System.out.println("                     ----------------------------------------------------------- ");
+        
 
         ResumenPedido resumenSample=new ResumenPedido();
         System.out.println(resumenSample.resumen);
         System.out.println("");
-        System.out.println("                                " + Pantalla.BOTON_CONFIRMAR + " " + Pantalla.BOTON_VOLVER);
+        System.out.println("                                1.CONFIRMAR      2.VOLVER");
 
         Menu menuPedidos = new Menu();
         menuPedidos.mostrarBotonesPedido();
