@@ -29,13 +29,12 @@ public class PantallaCobro {
         
         
         Menu menuCobros = new Menu();
-        System.out.println("3.VOLVER AL MENU PRINCIPAL");
         menuCobros.mostrarBotonesCobro();
         
-        System.out.println("3.VOLVER AL MENU PRINCIPAL");
+       /* System.out.println("3.VOLVER AL MENU PRINCIPAL");
         menuCobros.mostrarSalirAlMenuPrincipal();
         
-        
+        */
         
 
     } 
