@@ -5,7 +5,7 @@
 package Pantallas;
 
 import logica.Menu;
-import logica.Pantalla;
+import logica.*;
 
 /**
  *

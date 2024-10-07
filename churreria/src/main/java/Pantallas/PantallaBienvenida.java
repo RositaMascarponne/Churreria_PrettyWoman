@@ -4,8 +4,9 @@
  */
 package Pantallas;
 
-import logica.Pantalla;
+
 import entidades.*;
+import Pantallas.*;
 import java.util.Scanner;
 
 /**
