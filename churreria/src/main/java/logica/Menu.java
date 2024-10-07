@@ -158,8 +158,8 @@ public class Menu {
             opcion = sc.nextInt();
             sc.nextLine();
             switch (opcion) {
-                case 1:
-                    // A 1.Volver al menú principal
+                case 3:
+                    // 3.Volver al menú principal
                     PantallaBienvenida pantalla1 = new PantallaBienvenida();
                     pantalla1.mostrar();
                     mostrarMenuPrincipal();

@@ -4,7 +4,6 @@ Pantallas\PantallaPedido.class
 entidades\Bebida.class
 entidades\Pedido.class
 logica\Menu.class
-logica\MenuDisplay.class
 entidades\Tipo.class
 entidades\Churro.class
 Pantallas\PantallaBienvenida.class

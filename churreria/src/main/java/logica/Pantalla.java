@@ -6,7 +6,7 @@ package logica;
  */
 public abstract class Pantalla {
 
-    //Atributos de la clas Pantalla
+    //Atributos de la class Pantalla
     public static final String COMPANY = "CHURRERÍA PRETTY WOMAN";
     public static final String SCRIPT = "Dulce tentación, perfecto en cada ocasión";
     public static final String ENCABEZADO_BIENVENIDA = "PANTALLA DE BIENVENIDA";
@@ -24,7 +24,7 @@ public abstract class Pantalla {
     //BOTONES:
     public static final String BOTON_CONFIRMAR = "| 1.Confirmar |";
     public static final String BOTON_VOLVER = "| 2.Volver |";
-    public static final String BOTON_VOLVER_2 = "| 1.Volver al Menú Principal |";
+    public static final String BOTON_VOLVER_2 = "| 3.Volver al Menú Principal |";
     public static final String BOTON_COBRAR = "| 1.Cobrar pedido |";
     public static final String BOTON_CANCELAR_PEDIDO = "| 2.Cancelar pedido |";
     
@@ -36,7 +36,7 @@ public abstract class Pantalla {
         String[] menu = {"1. Ingresar Pedido", "2. Estado de Pedidos", "3. Entregar Pedidos", "4. Salir"};
         return menu;
     }
-
+/*
     public static String[] getTipoChurro() {
         String[] menu = {"1. Churro clásico", "2. Porra", "3.Relleno", "4. Especial"};
         return menu;
@@ -51,7 +51,7 @@ public abstract class Pantalla {
         String[] menu = {"1.Agua ", "2.Limonada ", "3.Cola", "4.Zumo", "5.Té con limón", "6.Infusiones", "7.Agua con gas", "8.Suizo", "9.Cerveza"};
         return menu;
     }
-
+*/
     public static String[] getResumenPedido() {
         String[] resumen = {" | Producto     ", "| Cantidad |", "Precio Unitario|", "Precio total"};
 
