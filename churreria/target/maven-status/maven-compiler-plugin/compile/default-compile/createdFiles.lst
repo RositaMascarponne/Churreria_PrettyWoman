@@ -1,6 +1,7 @@
 entidades/Estado.class
 entidades/Pedido.class
 entidades/Churro.class
+ui/mainMenu.class
 dbConexion/DbChurro.class
 com/mycompany/churreria/Churreria.class
 dbConexion/DbConnection.class
