@@ -42,17 +42,41 @@ public class Churreria {
         System.out.println("Elija opción----------");
         int opcion = sc.nextInt();
         int unidades;
+        String[] mResumen = mainMenu.getResumenPedido();
+        String tipoChurro = "Churros rellenos de crema de avellanas(4uds)";
+        int cantidad = 2;
+        float precioUnitario = 5.90f;
+        float precioTotal = cantidad + precioUnitario;
+        String totalPagar = " Total a Pagar: ";
 
         switch (opcion) {
             case 1 -> {
-                //pantallaPedido
-                /*String[] pantallaIngreso = mainMenu.getMenuBienvenida();
-                for(String ListaMenu : pantallaIngreso){
-                    System.out.println(ListaMenu); 
-                    
-                }*/
-                System.out.print("CUANTAS UNIDADES DE CHURROS: ");
+                // Pantalla de Bienvenida
+                company = String.format("\n%80s\n", "------------------" + mainMenu.COMPANY + "-------------------");
+                System.out.print(company);
+                script = String.format("%70s", mainMenu.SCRIPT);
+                System.out.println(script);
+                System.out.println("                     ----------------------------------------------------------- ");
+                pBienvenida = String.format("\n%60s\n", mainMenu.INGRESAR_PEDIDO);
+                System.out.println(pBienvenida);
+                System.out.println("-----------------------------------------------------------------------------------------");
+
+                String tipoChurros = "1. Churro Clásico\n";
+                System.out.println(tipoChurros);
+                System.out.print("Introducir unidades porfavor: ");
                 unidades = sc.nextInt();
+
+                //Lammando al metodo getResumenPedido
+                String PalabraResumen = String.format("%10s", mainMenu.RESUMEN);
+                System.out.println("\n" + PalabraResumen);
+                System.out.println("--------------------------------------------------------------------------------------------");
+                System.out.printf("\n| %8s \t\t\t\t\t| %5s | %15s | %10s |\n", mResumen[0], mResumen[1], mResumen[2], mResumen[3]);
+                System.out.printf("%46s%8s%15s%18s\n", tipoChurro, cantidad, precioUnitario, precioTotal);
+                System.out.println("---------------------------------------------------------------------------------------------");
+                System.out.println("");
+                System.out.printf("%60s", totalPagar + "\n\t\t\t\t   11.80€");
+                System.out.println("\n");
+
             }
 
         }
