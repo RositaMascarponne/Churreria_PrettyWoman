@@ -21,32 +21,30 @@ public class Churreria {
     public static void main(String[] args) {
         //CONEXIÓN A LA BASE DE DATOS
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+           
             String URL = "jdbc:mysql://localhost:3306/churreria_pretty_woman";
             Connection conn = DriverManager.getConnection(URL, "root", "root");
-            
-                    // Mostrando Menú en pantalla
 
-                    
-
-
+            // Mostrando Menú en pantalla
             //Mostrando Menú en pantalla
-            PantallaBienvenida pantallaBienvenida= new PantallaBienvenida();
+            PantallaBienvenida pantallaBienvenida = new PantallaBienvenida();
             pantallaBienvenida.mostrar();
-            
-            Menu menuPrincipal=new Menu();
+
+           Menu menuPrincipal = new Menu();
             menuPrincipal.mostrarMenuPrincipal();
-            
-            
-            
+
+            //Traer info de la base de dato
+            Churro miChurro = new Churro();
+            float precio = miChurro.getPrecioUnitario();
+            System.out.println(precio);
 
             //CIERRE CONEXIÓN A BASE DE DATOS        
             conn.close();
             System.out.println("Conexión cerrada");
 
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("Se ha producido un error en la conexión. Puede que no estes en el puerto correcto eh? ¿Pero lo has cambiado?¿Seguro eh? ");
+            //System.out.println("Se ha producido un error en la conexión. Puede que no estes en el puerto correcto eh? ¿Pero lo has cambiado?¿Seguro eh? ");
         }
     }
 }
