@@ -22,7 +22,7 @@ public class Churreria {
         //CONEXIÓN A LA BASE DE DATOS
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String URL = "jdbc:mysql://localhost:3308/churreria_pretty_woman";
+            String URL = "jdbc:mysql://localhost:3306/churreria_pretty_woman";
             Connection conn = DriverManager.getConnection(URL, "root", "root");
             
                     // Mostrando Menú en pantalla
