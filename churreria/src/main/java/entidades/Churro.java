@@ -1,39 +1,50 @@
 package entidades;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author luisa
  */
 public class Churro {
 
-    private Connection conn;
+      //Atributos de la clase churro
+    private int churroId;
+    private String churroNombre;
+    private float churroPrecio;
+    
+    //Constructores
+    public Churro(){
+        
+    }
+    
+   public Churro(String churroNombre, float churroPrecio){
+       this.churroNombre = churroNombre;
+       this.churroPrecio = churroPrecio;
+   }
+    //Getters
+   public int getChurroId(){
+       return this.churroId;
+   }
+   public String getChurroNombre(){
+       return this.churroNombre;            
+   }
+   public float getChurroPrecio(){
+       return this.churroPrecio;
+   }
 
-    public Churro(Connection conn) {
-        this.conn = conn;
+    public void setChurroId(int churroId) {
+        this.churroId = churroId;
     }
 
-    public void mostrarChurro() throws SQLException {
-        String sql = "SELECT * FROM churros";
-        Statement st = conn.createStatement();
-        ResultSet rs = st.executeQuery(sql);
-        while (rs.next()) {
-            System.out.println(rs.getInt("churroID") + ": " + rs.getString("churroNombre"));
-        }
+    public void setChurroNombre(String churroNombre) {
+        this.churroNombre = churroNombre;
     }
 
-    public void agregarChurro(String nombre) throws SQLException {
-        String sqlInsert = "INSERT INTO churros(churroNombre) VALUES('" + nombre + "')";
-        Statement st = conn.createStatement();
-        st.executeUpdate(sqlInsert);
-        System.out.println("Churro agregado: " + nombre);
+    public void setChurroPrecio(float churroPrecio) {
+        this.churroPrecio = churroPrecio;
     }
+   //Métodos
+   @Override
+   public String toString(){
+      return "Churro{" + "churroId=" + churroId + ",churroNombre=" + churroNombre + ",churroPrecio=" + churroPrecio + '}';
+   }
 
 }
