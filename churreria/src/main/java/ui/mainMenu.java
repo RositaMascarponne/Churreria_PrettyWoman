@@ -41,21 +41,22 @@ public class mainMenu {
     
     //PANATALLA DE ESTADO
     public void pantallaEstado() {
-        String company2 = String.format("\n%80s\n", "------------------" + mainMenu.COMPANY + "-------------------");
+        String company2 = String.format("\n%80s\n", "------------------" + COMPANY + "-------------------");
         System.out.print(company2);
 
-        String script2 = String.format("%70s", mainMenu.SCRIPT);
+        String script2 = String.format("%70s", SCRIPT);
         System.out.println(script2);
 
         System.out.println("                     ----------------------------------------------------------- ");
-        String pBienvenida2 = String.format("\n%60s\n", mainMenu.ESTADO_PEDIDO);
+        String pBienvenida2 = String.format("\n%60s\n", ESTADO_PEDIDO);
 
         System.out.println(pBienvenida2);
         System.out.println("                     ----------------------------------------------------------- ");
         System.out.println("");
-        System.out.println("                               " + mainMenu.VOLVER);
-        //Menu menuEstados=new Menu();
-        //menuEstados.mostrarSalirAlMenuPrincipal();
+        System.out.println("\n\n\n\n\nY aqui ira algo muy bonito\n\n\n\n\n\n");
+        
+        System.out.printf("\t\t\t\t| %5s | | %10s | \n", CONFIRMAR, VOLVER);
+        
     }
 
 }
