@@ -11,7 +11,7 @@ public class Pedido {
     private int churroId;
     private int bebidaId;
     private int estado_Id;
-
+    private static final String PROCESO = "En proceso";
     //Constructores
     public Pedido() {
     }

@@ -6,7 +6,7 @@ package ui;
  */
 public class mainMenu {
     //Atributos de la clase mainMenu
-
+    
     public static final String COMPANY = "CHURRERÍA PRETTY WOMAN";
     public static final String SCRIPT = "Dulce tentación, perfecto en cada ocasión";
     public static final String ENCABEZADO_BIENVENIDA = "-PANTALLA DE BIENVENIDA-";
@@ -15,6 +15,11 @@ public class mainMenu {
     public static final String COBRO_PERDIDO = "COBRAR DE PEDIDO";
     public static final String ESTADO_PEDIDO = "ESTADO DE PEDIDOS";
     public static final String ENTREGA = "ENTREGAR PEDIDO";
+    
+    //Atributos para hacer los botones del menú
+    public static final String CONFIRMAR = "1.Confirmar";
+    public static final String VOLVER = "2.Volver atrás";
+    
 
 
     public static String[] getMenuBienvenida() {
@@ -24,6 +29,10 @@ public class mainMenu {
         public static String[] getResumenPedido() {
         String[] resumen = {"Producto", "Cantidad", "Precio Unitario", "Precio total"};
         return resumen;
+    }
+         public static String[] getBotonIngreso() {
+        String[] botonPIngreso = {"Confirmar", "Volver atrás",};
+        return botonPIngreso;
     }
     
 }
