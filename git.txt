@@ -1,4 +1,4 @@
-cd Desktop/Repositorio/TheCorner/Dumps
+cd Desktop/Repositorio/TheCorner/Churreria_PrettyWoman
 git init
 git config --global user.name 'RositaMascarponne'
 git config --global user.mail 'rosat020@thecorner.cat'
