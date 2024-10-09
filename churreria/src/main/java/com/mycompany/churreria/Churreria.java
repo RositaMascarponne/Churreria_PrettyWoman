@@ -8,6 +8,8 @@ import dbConexion.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 import entidades.*;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import ui.*;
 
 /**
@@ -66,7 +68,10 @@ public class Churreria {
 
                 //Buscar precio en DB de churro de avellana
                 Churro miChuro = DbChurro.getChurro("Churros rellenos de crema de avellanas");
+                //Usado BigDecimal para no perder precision y sacar el numero de decimales deseado
                 float precioUnitario = miChuro.getChurroPrecio();
+                BigDecimal precioUnitarioBD = new BigDecimal(Float.toString(precioUnitario));
+                precioUnitarioBD = precioUnitarioBD.setScale(2, RoundingMode.HALF_UP);
                 float precioTotal = unidades * precioUnitario;
                 String aPagar = "Total a pagar: ";
                 float totalPagar = 0;
@@ -77,10 +82,10 @@ public class Churreria {
                 System.out.println("\n" + PalabraResumen);
                 System.out.println("--------------------------------------------------------------------------------------------");
                 System.out.printf("\n| %8s \t\t\t\t\t| %5s | %15s | %10s |\n", mResumen[0], mResumen[1], mResumen[2], mResumen[3]);
-                System.out.printf("%46s%8s%15s%18s\n", tipoChurro, unidades, precioUnitario, precioTotal);
+                System.out.printf("%46s%8s%15s%18.2f\n", tipoChurro, unidades, precioUnitarioBD, precioTotal);
                 System.out.println("---------------------------------------------------------------------------------------------");
                 System.out.println("");
-                System.out.printf("%60s\n%54s", aPagar, totalPagar);
+                System.out.printf("%60s\n%54.2f", aPagar, totalPagar);
                 System.out.println("\n");
                 System.out.printf("\t\t\t\t| %5s | | %10s | \n", mainMenu.CONFIRMAR, mainMenu.VOLVER);
 
