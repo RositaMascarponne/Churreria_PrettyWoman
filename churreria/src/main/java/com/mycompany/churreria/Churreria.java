@@ -44,9 +44,9 @@ public class Churreria {
         int unidades;
         String[] mResumen = mainMenu.getResumenPedido();
         String tipoChurro = "Churros rellenos de crema de avellanas(4uds)";
-        int cantidad = 2;
+        unidades = 1 ;
         float precioUnitario = 5.90f;
-        float precioTotal = cantidad + precioUnitario;
+        float precioTotal = unidades + precioUnitario;
         String totalPagar = " Total a Pagar: ";
 
         switch (opcion) {
@@ -71,7 +71,7 @@ public class Churreria {
                 System.out.println("\n" + PalabraResumen);
                 System.out.println("--------------------------------------------------------------------------------------------");
                 System.out.printf("\n| %8s \t\t\t\t\t| %5s | %15s | %10s |\n", mResumen[0], mResumen[1], mResumen[2], mResumen[3]);
-                System.out.printf("%46s%8s%15s%18s\n", tipoChurro, cantidad, precioUnitario, precioTotal);
+                System.out.printf("%46s%8s%15s%18s\n", tipoChurro, unidades, precioUnitario, precioTotal);
                 System.out.println("---------------------------------------------------------------------------------------------");
                 System.out.println("");
                 System.out.printf("%60s", totalPagar + "\n\t\t\t\t   11.80€");
