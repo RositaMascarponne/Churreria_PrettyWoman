@@ -15,6 +15,8 @@ public class mainMenu {
     public static final String COBRO_PERDIDO = "COBRAR DE PEDIDO";
     public static final String ESTADO_PEDIDO = "ESTADO DE PEDIDOS";
     public static final String ENTREGA = "ENTREGAR PEDIDO";
+    
+    public static final String PRUEBA= "CAEBECERA DE EJEMPLO";//PARA HACER PRUEBAS
 
     //Atributos para hacer los botones del menú
     public static final String CONFIRMAR = "1.Confirmar";
