@@ -77,10 +77,10 @@ public class Churreria {
                 System.out.println("\n" + PalabraResumen);
                 System.out.println("--------------------------------------------------------------------------------------------");
                 System.out.printf("\n| %8s \t\t\t\t\t| %5s | %15s | %10s |\n", mResumen[0], mResumen[1], mResumen[2], mResumen[3]);
-                System.out.printf("%46s%8s%15s%18s\n", tipoChurro, unidades, precioUnitario, precioTotal);
+                System.out.printf("%46s%8s%16s\t\t%.2f€\n", tipoChurro, unidades, precioUnitario, precioTotal);
                 System.out.println("---------------------------------------------------------------------------------------------");
                 System.out.println("");
-                System.out.printf("%60s\n%54s", aPagar, totalPagar);
+                System.out.printf("%60s\n\t\t\t\t\t\t%.2f€", aPagar, totalPagar);
                 System.out.println("\n");
                 System.out.printf("\t\t\t\t| %5s | | %10s | \n", mainMenu.CONFIRMAR, mainMenu.VOLVER);
 
