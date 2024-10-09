@@ -90,8 +90,15 @@ public class Churreria {
                 System.out.printf("\t\t\t\t| %5s | | %10s | \n", mainMenu.CONFIRMAR, mainMenu.VOLVER);
 
             }
+            case 2 -> {
+               mainMenu menuEstado = new mainMenu(); 
+               menuEstado.pantallaEstado();
+
+            }
 
         }
+        
+
 
         try {
             miConn.close();
