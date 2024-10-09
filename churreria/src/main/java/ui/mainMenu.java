@@ -6,7 +6,7 @@ package ui;
  */
 public class mainMenu {
     //Atributos de la clase mainMenu
-    
+
     public static final String COMPANY = "CHURRERÍA PRETTY WOMAN";
     public static final String SCRIPT = "Dulce tentación, perfecto en cada ocasión";
     public static final String ENCABEZADO_BIENVENIDA = "-PANTALLA DE BIENVENIDA-";
@@ -15,24 +15,45 @@ public class mainMenu {
     public static final String COBRO_PERDIDO = "COBRAR DE PEDIDO";
     public static final String ESTADO_PEDIDO = "ESTADO DE PEDIDOS";
     public static final String ENTREGA = "ENTREGAR PEDIDO";
-    
+
     //Atributos para hacer los botones del menú
     public static final String CONFIRMAR = "1.Confirmar";
     public static final String VOLVER = "2.Volver atrás";
-    
-
 
     public static String[] getMenuBienvenida() {
         String[] menu = {"1. Ingresar Pedido", "2. Estado de Pedidos", "3. Entregar Pedidos", "4. Salir"};
         return menu;
     }
-        public static String[] getResumenPedido() {
+
+    public static String[] getResumenPedido() {
         String[] resumen = {"Producto", "Cantidad", "Precio Unitario", "Precio total"};
         return resumen;
     }
-         public static String[] getBotonIngreso() {
+
+    public static String[] getBotonIngreso() {
         String[] botonPIngreso = {"Confirmar", "Volver atrás",};
         return botonPIngreso;
     }
+
+    //PANTALLAS
     
+    //PANATALLA DE ESTADO
+    public void pantallaEstado() {
+        String company2 = String.format("\n%80s\n", "------------------" + mainMenu.COMPANY + "-------------------");
+        System.out.print(company2);
+
+        String script2 = String.format("%70s", mainMenu.SCRIPT);
+        System.out.println(script2);
+
+        System.out.println("                     ----------------------------------------------------------- ");
+        String pBienvenida2 = String.format("\n%60s\n", mainMenu.ESTADO_PEDIDO);
+
+        System.out.println(pBienvenida2);
+        System.out.println("                     ----------------------------------------------------------- ");
+        System.out.println("");
+        System.out.println("                               " + mainMenu.VOLVER);
+        //Menu menuEstados=new Menu();
+        //menuEstados.mostrarSalirAlMenuPrincipal();
+    }
+
 }
