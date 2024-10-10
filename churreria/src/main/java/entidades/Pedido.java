@@ -11,16 +11,18 @@ public class Pedido {
     private int churroId;
     private int bebidaId;
     private int estado_Id;
-    private static final String PROCESO = "En proceso";
+    private static final int ESTADO_ID = 1;
+
     //Constructores
     public Pedido() {
+        this.estado_Id = Pedido.ESTADO_ID;
     }
 
-    public Pedido(int pedidoId, int churroId, int bebidaId, int estado_Id) {
+    public Pedido(int pedidoId, int churroId, int bebidaId) {
         this.pedidoId = pedidoId;
         this.churroId = churroId;
         this.bebidaId = bebidaId;
-        this.estado_Id = estado_Id;
+        this.estado_Id = Pedido.ESTADO_ID;
     }
 
     //Getters
