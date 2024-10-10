@@ -92,6 +92,12 @@ public class Churreria {
                                 mainMenu menuEstado = new mainMenu();
                                 menuEstado.pantallaEstado(); // Si quieres ir a otra pantalla después de confirmar
                                 System.out.println("Cierre provisional hasta configurar los botones");
+                                
+                                //INSERTAR PEDIDO CONFIRMADO EN LA DB
+                                Pedido miPedido = new Pedido();
+                                miPedido.setChurroId(6); // el 6 es el id del churro con avellana 
+                                
+                                DbPedido.insertNewPedido(miPedido);
                             }
                             case 2 -> {
                                 // Acción para volver al menú principal
