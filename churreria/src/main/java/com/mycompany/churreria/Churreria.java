@@ -44,19 +44,20 @@ public class Churreria {
 
             switch (opcion) {
                 case 1 -> {
+                    // Buscar precio en DB de churro de avellana
+                    Churro miChuro = DbChurro.getChurro("Churros clásicos (4ud.)");
+                    float precioUnitario = miChuro.getChurroPrecio();
+                    String tipoChurro = miChuro.getChurroNombre();
+                    int idChurro = miChuro.getChurroId();
+                   
                     // Pantalla de Bienvenida
-                    String tipoChurro = "Churros rellenos de crema de avellanas(4uds)";
                     System.out.println("-----------------------------------------------------------------------------------------");
                     String tipoChurros = "1. Churro Clásico\n";
                     System.out.println(tipoChurros);
                     System.out.print("Introducir unidades porfavor: ");
 
                     // Introducir unidades
-                    int unidades = sc.nextInt();
-
-                    // Buscar precio en DB de churro de avellana
-                    Churro miChuro = DbChurro.getChurro("Churros rellenos de crema de avellanas");
-                    float precioUnitario = miChuro.getChurroPrecio();
+                    int unidades = sc.nextInt();                   
                     float precioTotal = unidades * precioUnitario;
                     String aPagar = "Total a pagar: ";
                     float totalPagar = 0;
@@ -68,7 +69,7 @@ public class Churreria {
                     System.out.println("--------------------------------------------------------------------------------------------");
                     String[] mResumen = mainMenu.getResumenPedido();
                     System.out.printf("\n| %8s \t\t\t\t\t| %5s | %15s | %10s |\n", mResumen[0], mResumen[1], mResumen[2], mResumen[3]);
-                    System.out.printf("%46s%8s%15.2f €%18.2f €\n", tipoChurro, unidades, precioUnitario, precioTotal);
+                    System.out.printf("%25s%30s%15.2f €%15.2f €\n", tipoChurro, unidades, precioUnitario, precioTotal);
 
                     System.out.println("---------------------------------------------------------------------------------------------");
                     System.out.println("");
@@ -94,7 +95,7 @@ public class Churreria {
                                 
                                 //INSERTAR PEDIDO CONFIRMADO EN LA DB
                                 Pedido miPedido = new Pedido();
-                                miPedido.setChurroId(6); // el 6 es el id del churro con avellana 
+                                miPedido.setChurroId(idChurro); // imprimiendo churro por ID
                                 
                                 DbPedido.insertNewPedido(miPedido);
                             }
