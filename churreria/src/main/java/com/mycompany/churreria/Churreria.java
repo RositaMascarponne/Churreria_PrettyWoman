@@ -49,7 +49,7 @@ public class Churreria {
                     float precioUnitario = miChuro.getChurroPrecio();
                     String tipoChurro = miChuro.getChurroNombre();
                     int idChurro = miChuro.getChurroId();
-                   
+
                     // Pantalla de Bienvenida
                     System.out.println("-----------------------------------------------------------------------------------------");
                     String tipoChurros = "1. Churro Clásico\n";
@@ -57,7 +57,8 @@ public class Churreria {
                     System.out.print("Introducir unidades porfavor: ");
 
                     // Introducir unidades
-                    int unidades = sc.nextInt();                   
+                    int unidades = sc.nextInt();
+
                     float precioTotal = unidades * precioUnitario;
                     String aPagar = "Total a pagar: ";
                     float totalPagar = 0;
@@ -92,11 +93,11 @@ public class Churreria {
                                 mainMenu menuEstado = new mainMenu();
                                 menuEstado.pantallaEstado(); // Si quieres ir a otra pantalla después de confirmar
                                 System.out.println("Cierre provisional hasta configurar los botones");
-                                
+
                                 //INSERTAR PEDIDO CONFIRMADO EN LA DB
                                 Pedido miPedido = new Pedido();
                                 miPedido.setChurroId(idChurro); // imprimiendo churro por ID
-                                
+
                                 DbPedido.insertNewPedido(miPedido);
                             }
                             case 2 -> {
