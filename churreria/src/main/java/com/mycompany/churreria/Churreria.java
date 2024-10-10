@@ -57,6 +57,7 @@ public class Churreria {
                     // Buscar precio en DB de churro de avellana
                     Churro miChuro = DbChurro.getChurro("Churros rellenos de crema de avellanas");
                     float precioUnitario = miChuro.getChurroPrecio();
+                    //float precioUnitario = 5.0f;
                     float precioTotal = unidades * precioUnitario;
                     String aPagar = "Total a pagar: ";
                     float totalPagar = 0;
