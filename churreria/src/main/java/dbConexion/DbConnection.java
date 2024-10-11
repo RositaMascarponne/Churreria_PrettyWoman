@@ -12,7 +12,7 @@ import java.sql.Statement;
 public abstract class DbConnection {
 
     //Datos DB
-    private static final String URL = "jdbc:mysql://localhost:3306";
+    private static final String URL = "jdbc:mysql://localhost:3308";
     private static final String DATABASE = "churreria_pretty_woman";
     private static final String USER = "root";
     private static final String PASS ="root";
