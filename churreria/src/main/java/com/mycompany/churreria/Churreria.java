@@ -70,6 +70,7 @@ public class Churreria {
                     System.out.println("--------------------------------------------------------------------------------------------");
                     String[] mResumen = mainMenu.getResumenPedido();
                     System.out.printf("\n| %8s \t\t\t\t\t| %5s | %15s | %10s |\n", mResumen[0], mResumen[1], mResumen[2], mResumen[3]);
+
                     System.out.printf("%25s%30s%15.2f €%15.2f €\n", tipoChurro, unidades, precioUnitario, precioTotal);
 
                     System.out.println("---------------------------------------------------------------------------------------------");
@@ -81,7 +82,7 @@ public class Churreria {
                     while (continuarBoton) {
                         System.out.println("\n");
                         System.out.printf("\t\t\t\t| %5s | | %10s | \n", mainMenu.CONFIRMAR, mainMenu.VOLVER);
-                        System.out.print("Elija opción: ");
+                        System.out.print("Elija opción: \n");
                         // La lógica de los botones
                         int boton = sc.nextInt();
                         switch (boton) {
@@ -92,8 +93,38 @@ public class Churreria {
                                 continuar = false;// Sin esto se me vuelve al menu principal de nuevo
                                 mainMenu menuEstado = new mainMenu();
                                 menuEstado.pantallaEstado(); // Si quieres ir a otra pantalla después de confirmar
-                                System.out.println("Cierre provisional hasta configurar los botones");
+                                System.out.printf(mainMenu.nPedido);
+                                String[] detalleEstado = mainMenu.getDetalleEstado();
+                                System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
+                                System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
+                                System.out.print(mainMenu.ESTADO);
+                                //Llamando array de String listaEstado para imprimir el estado -En preparación                           
+                                String[] listaEstado = mainMenu.listaEstado;
+                                System.out.println(listaEstado[0]);
+                                System.out.println("-------------------------------------------------------------------------------- ");
+                                System.out.println("-------------------------------------------------------------------------------- ");
+                                //Imprimiendo Estado de pedido -Listo 
+                                System.out.printf(mainMenu.nPedido);
+                                System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
+                                System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
+                                System.out.print(mainMenu.ESTADO);
+                                //Llamando array de String listaEstado                                
+                                listaEstado = mainMenu.listaEstado;
+                                System.out.println(listaEstado[1]);
+                                System.out.println("-------------------------------------------------------------------------------- ");
+                                System.out.println("-------------------------------------------------------------------------------- ");
+                                //Llamando array de Sting ListaEstado para imprimir el estado -Entregado
+                                System.out.printf(mainMenu.nPedido);
+                                System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
+                                System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
+                                System.out.print(mainMenu.ESTADO);
+                                //Llamando array de String listaEstado                                
+                                listaEstado = mainMenu.listaEstado;
+                                System.out.println(listaEstado[2]);
+                                System.out.println("--------------------------------------------------------------------------------\n");
+                                System.out.printf("%70s\t\t\n", mainMenu.VOLVER_MENU);
 
+                                //System.out.printf("\t\t\t\t\n\t\t\t\t| %5s | | %10s | \n", mainMenu.CONFIRMAR, mainMenu.VOLVER);
                                 //INSERTAR PEDIDO CONFIRMADO EN LA DB
                                 Pedido miPedido = new Pedido();
                                 miPedido.setChurroId(idChurro); // imprimiendo churro por ID
@@ -107,18 +138,73 @@ public class Churreria {
                                 // Aquí no se cierra el programa, simplemente se vuelve al menú principal
                             }
                             default -> {
-                                System.out.println("Opción no válida, por favor elija nuevamente.");
+                                System.out.println("\nOpción no válida, por favor elija nuevamente.");
                             }
                         }
                     }
                 }
                 case 2 -> {
                     // Muestra la pantalla de estado
-
+                    
+                    String tipoChurro = ("Churros clásicos (4ud.)");
+                    int unidades = 10;
                     mainMenu menuEstado = new mainMenu();
                     menuEstado.pantallaEstado();
-                    System.out.println("Cierre provisional hasta configurar los botones");
+
+                    System.out.printf(mainMenu.nPedido);
+                    String[] detalleEstado = mainMenu.getDetalleEstado();
+                    System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
+                    System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
+                    System.out.print(mainMenu.ESTADO);
+                    //Llamando array de String listaEstado para imprimir el estado -En preparación                           
+                    String[] listaEstado = mainMenu.listaEstado;
+                    System.out.println(listaEstado[0]);
+                    System.out.println("-------------------------------------------------------------------------------- ");
+                    System.out.println("-------------------------------------------------------------------------------- ");
+                    //Imprimiendo Estado de pedido -Listo 
+                    System.out.printf(mainMenu.nPedido);
+                    System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
+                    System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
+                    System.out.print(mainMenu.ESTADO);
+                    //Llamando array de String listaEstado                                
+                    listaEstado = mainMenu.listaEstado;
+                    System.out.println(listaEstado[1]);
+                    System.out.println("-------------------------------------------------------------------------------- ");
+                    System.out.println("-------------------------------------------------------------------------------- ");
+                    //Llamando array de Sting ListaEstado para imprimir el estado -Entregado
+                    System.out.printf(mainMenu.nPedido);
+                    System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
+                    System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
+                    System.out.print(mainMenu.ESTADO);
+                    //Llamando array de String listaEstado                                
+                    listaEstado = mainMenu.listaEstado;
+                    System.out.println(listaEstado[2]);
+                    System.out.println("--------------------------------------------------------------------------------\n");
+                    System.out.printf("%70s\t\t\n", mainMenu.VOLVER_MENU);
+
+                    System.out.println("\nCierre provisional hasta configurar los botones");
                     continuar = false; // Finaliza el bucle principal
+                }
+                case 3 -> {
+                    //Muestra Pantalla Entrega
+                    company = String.format("\n%80s\n", "------------------" + mainMenu.COMPANY + "-------------------");
+                    System.out.print(company);
+                    script = String.format("%70s", mainMenu.SCRIPT);
+                    System.out.println(script);
+                    System.out.println("                     ----------------------------------------------------------- ");
+                    System.out.printf("%60s", mainMenu.ENTREGA);
+                    System.out.println("\n--------------------------------------------------------------------------------\n");
+                    System.out.printf("%70s\t\t\n", mainMenu.VOLVER_MENU);
+
+                    System.out.printf(mainMenu.nPedido);
+                    String[] detalleEstado = mainMenu.getDetalleEstado();
+                    System.out.printf("\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
+
+                    String tipoChurro = ("Churros clásicos (4ud.)");
+                    int unidades = 10;
+
+                    System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
+
                 }
 
                 case 4 -> {

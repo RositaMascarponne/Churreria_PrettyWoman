@@ -13,15 +13,22 @@ public class mainMenu {
     public static final String INGRESAR_PEDIDO = "INGRESAR PEDIDO";
     public static final String RESUMEN = "RESUMEN: ";
     public static final String COBRO_PERDIDO = "COBRAR DE PEDIDO";
-    public static final String ESTADO_PEDIDO = "ESTADO DE PEDIDOS";
-    public static final String ENTREGA = "ENTREGAR PEDIDO";
-    
-    public static final String PRUEBA= "CAEBECERA DE EJEMPLO";//PARA HACER PRUEBAS
+    public static final String ESTADO_PEDIDO = "-ESTADO DE PEDIDOS-";
+    public static final String ENTREGA = "-ENTREGAR PEDIDO-";
+
+    public static final String PRUEBA = "CAEBECERA DE EJEMPLO";//PARA HACER PRUEBAS
 
     //Atributos para hacer los botones del menú
     public static final String CONFIRMAR = "1.Confirmar";
     public static final String VOLVER = "2.Volver atrás";
-
+    public static final String VOLVER_MENU = "|1.Volver al menú principal|";
+    //Atributo de pantalla estado
+    public static final String nPedido =  "nº de pedido:";
+    
+    public static String[] listaEstado = {"En preparación", "Listo","Entregado"};
+    
+    public static final String ESTADO = "Estado: ";
+    
     public static String[] getMenuBienvenida() {
         String[] menu = {"1. Ingresar Pedido", "2. Estado de Pedidos", "3. Entregar Pedidos", "4. Salir"};
         return menu;
@@ -32,13 +39,12 @@ public class mainMenu {
         return resumen;
     }
 
-    public static String[] getBotonIngreso() {
-        String[] botonPIngreso = {"Confirmar", "Volver atrás",};
-        return botonPIngreso;
+    public static String[] getDetalleEstado() {
+        String[] detalleEstado = {"Producto", "Cantidad",};
+        return detalleEstado;
     }
 
     //PANTALLAS
-    
     //PANATALLA DE ESTADO
     public void pantallaEstado() {
         String company2 = String.format("\n%80s\n", "------------------" + COMPANY + "-------------------");
@@ -51,12 +57,14 @@ public class mainMenu {
         String pBienvenida2 = String.format("\n%60s\n", ESTADO_PEDIDO);
 
         System.out.println(pBienvenida2);
-        System.out.println("                     ----------------------------------------------------------- ");
+        System.out.println("                     ----------------------------------------------------------- \n");
+        System.out.printf("%70s\t\t\n", VOLVER_MENU);
+        System.out.println("--------------------------------------------------------------------------------- ");
         System.out.println("");
-        System.out.println("\n\n\n\n\nY aqui ira algo muy bonito\n\n\n\n\n\n");
-        
-        System.out.printf("\t\t\t\t| %5s | | %10s | \n", CONFIRMAR, VOLVER);
-        
+        //System.out.println("\n\n\n\n\nY aqui ira algo muy bonito\n\n\n\n\n\n");
+
+       // System.out.printf("\t\t\t\t| %5s | | %10s | \n", CONFIRMAR, VOLVER);
+
     }
 
 }
