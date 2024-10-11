@@ -23,7 +23,7 @@ public class mainMenu {
     public static final String VOLVER = "2.Volver atrás";
     public static final String VOLVER_MENU = "|1.Volver al menú principal|";
     //Atributo de pantalla estado
-    public static final String nPedido =  "nº de pedido:";
+    public static final String nPedido =  "nº de pedido: ";
     
     public static String[] listaEstado = {"En preparación", "Listo","Entregado"};
     

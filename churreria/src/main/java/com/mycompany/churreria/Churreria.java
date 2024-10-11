@@ -19,11 +19,24 @@ public class Churreria {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
         Connection miConn = DbConnection.getConnection();
 
+        //VARIABLES
+        // Buscar precio en DB de churro de avellana
+        Churro miChuro = DbChurro.getChurro("Churros clásicos (4ud.)");
+        float precioUnitario = miChuro.getChurroPrecio();
+        String tipoChurro = miChuro.getChurroNombre();
+        int idChurro = miChuro.getChurroId();
+        int unidades = 0;
+
+        //Incicando número de pedido
+        int numeroPedido = 1;
+        
         // Bucle para mostrar el menú principal
         boolean continuar = true;
         while (continuar) {
+
             // Mostrando Menú de Bienvenida
             String company = String.format("\n%80s\n", "------------------" + mainMenu.COMPANY + "-------------------");
             System.out.print(company);
@@ -44,11 +57,6 @@ public class Churreria {
 
             switch (opcion) {
                 case 1 -> {
-                    // Buscar precio en DB de churro de avellana
-                    Churro miChuro = DbChurro.getChurro("Churros clásicos (4ud.)");
-                    float precioUnitario = miChuro.getChurroPrecio();
-                    String tipoChurro = miChuro.getChurroNombre();
-                    int idChurro = miChuro.getChurroId();
 
                     // Pantalla de Bienvenida
                     System.out.println("-----------------------------------------------------------------------------------------");
@@ -57,7 +65,7 @@ public class Churreria {
                     System.out.print("Introducir unidades porfavor: ");
 
                     // Introducir unidades
-                    int unidades = sc.nextInt();
+                    unidades = sc.nextInt();
 
                     float precioTotal = unidades * precioUnitario;
                     String aPagar = "Total a pagar: ";
@@ -89,47 +97,17 @@ public class Churreria {
                             case 1 -> {
                                 // Acción para confirmar
                                 System.out.println("Pedido confirmado.");
-                                continuarBoton = false; // Sale del bucle este
-                                continuar = false;// Sin esto se me vuelve al menu principal de nuevo
-                                mainMenu menuEstado = new mainMenu();
-                                menuEstado.pantallaEstado(); // Si quieres ir a otra pantalla después de confirmar
-                                System.out.printf(mainMenu.nPedido);
-                                String[] detalleEstado = mainMenu.getDetalleEstado();
-                                System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
-                                System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
-                                System.out.print(mainMenu.ESTADO);
-                                //Llamando array de String listaEstado para imprimir el estado -En preparación                           
-                                String[] listaEstado = mainMenu.listaEstado;
-                                System.out.println(listaEstado[0]);
-                                System.out.println("-------------------------------------------------------------------------------- ");
-                                System.out.println("-------------------------------------------------------------------------------- ");
-                                //Imprimiendo Estado de pedido -Listo 
-                                System.out.printf(mainMenu.nPedido);
-                                System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
-                                System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
-                                System.out.print(mainMenu.ESTADO);
-                                //Llamando array de String listaEstado                                
-                                listaEstado = mainMenu.listaEstado;
-                                System.out.println(listaEstado[1]);
-                                System.out.println("-------------------------------------------------------------------------------- ");
-                                System.out.println("-------------------------------------------------------------------------------- ");
-                                //Llamando array de Sting ListaEstado para imprimir el estado -Entregado
-                                System.out.printf(mainMenu.nPedido);
-                                System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
-                                System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
-                                System.out.print(mainMenu.ESTADO);
-                                //Llamando array de String listaEstado                                
-                                listaEstado = mainMenu.listaEstado;
-                                System.out.println(listaEstado[2]);
-                                System.out.println("--------------------------------------------------------------------------------\n");
-                                System.out.printf("%70s\t\t\n", mainMenu.VOLVER_MENU);
+                                 numeroPedido++;
 
-                                //System.out.printf("\t\t\t\t\n\t\t\t\t| %5s | | %10s | \n", mainMenu.CONFIRMAR, mainMenu.VOLVER);
                                 //INSERTAR PEDIDO CONFIRMADO EN LA DB
                                 Pedido miPedido = new Pedido();
                                 miPedido.setChurroId(idChurro); // imprimiendo churro por ID
-
                                 DbPedido.insertNewPedido(miPedido);
+                                
+                                //System.out.printf("\t\t\t\t\n\t\t\t\t| %5s | | %10s | \n", mainMenu.CONFIRMAR, mainMenu.VOLVER);
+                                continuarBoton = false; // Sale del bucle este
+                                //continuar = false;// Sin esto se me vuelve al menu principal de nuevo // creo que debe terminar cuando de opcion
+                                // salir en el menu principla que es la 4 (Luisa)
                             }
                             case 2 -> {
                                 // Acción para volver al menú principal
@@ -144,18 +122,20 @@ public class Churreria {
                     }
                 }
                 case 2 -> {
-                    // Muestra la pantalla de estado
-                    
-                    String tipoChurro = ("Churros clásicos (4ud.)");
-                    int unidades = 10;
+                    //creando pantalla pedido
                     mainMenu menuEstado = new mainMenu();
-                    menuEstado.pantallaEstado();
+                    menuEstado.pantallaEstado(); // Si quieres ir a otra pantalla después de confirmar
 
-                    System.out.printf(mainMenu.nPedido);
+                    //Imprimiendo numero de pedido
+                    System.out.printf(mainMenu.nPedido + numeroPedido);
+                    
+
+                    //Imprimiendo estado 
                     String[] detalleEstado = mainMenu.getDetalleEstado();
                     System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
                     System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
                     System.out.print(mainMenu.ESTADO);
+
                     //Llamando array de String listaEstado para imprimir el estado -En preparación                           
                     String[] listaEstado = mainMenu.listaEstado;
                     System.out.println(listaEstado[0]);
@@ -183,7 +163,7 @@ public class Churreria {
                     System.out.printf("%70s\t\t\n", mainMenu.VOLVER_MENU);
 
                     System.out.println("\nCierre provisional hasta configurar los botones");
-                    continuar = false; // Finaliza el bucle principal
+                    //continuar = false; // Finaliza el bucle principal
                 }
                 case 3 -> {
                     //Muestra Pantalla Entrega
@@ -199,10 +179,7 @@ public class Churreria {
                     System.out.printf(mainMenu.nPedido);
                     String[] detalleEstado = mainMenu.getDetalleEstado();
                     System.out.printf("\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
-
-                    String tipoChurro = ("Churros clásicos (4ud.)");
-                    int unidades = 10;
-
+                                   
                     System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
 
                 }
