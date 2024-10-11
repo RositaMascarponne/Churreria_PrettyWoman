@@ -1,0 +1,48 @@
+--------------------------CHURRERÍA PRETTY WOMAN----------------------------
+		Dulce tentación, perfecto en cada ocasión.
+----------------------------------------------------------------------------
+
+			-INGRESAR PEDIDO-
+-------------------------------------------------------------------------
+-Tipo churro:
+	1.Churro clásico    
+	2.Porra
+	3.Relleno
+	4.Especial
+
+-Sabores: 
+	1.Clásico
+	2.Chocolate
+	3.Chocolate blanco
+	4.Vainilla
+	5.Dulce de leche
+	6.Avellanas
+	7.Fresa
+	8.Pistacho
+	9.Oreo
+
+-Bebidas:
+	1.Agua 
+	2.Limonada 
+	3.Cola
+	4.Zumo
+	5.Té con limón
+	6.Infusiones
+	7.Agua con gas
+	8.Suizo
+	9.Cerveza
+	 
+
+
+Resumen:
+----------------------------------------------------------------------------------------------------------
+	 | Producto                       | Cantidad | Precio Unitario| Precio total
+	 | Churros con chocolate(4uds.)   |	    2    |	    5,90€ 	      |	11,80€
+	 | Suizo   	                      | 	1    |  	2,40€ 	      |	2,40€	
+----------------------------------------------------------------------------------------------------------
+						 Total a pagar:   
+						   14,20€    
+
+
+
+						| 1.Confirmar | | 2.Volver atrás |
