@@ -8,7 +8,8 @@ import dbConexion.*;
 import java.sql.Connection;
 import java.sql.SQLException;
 import entidades.*;
-
+import java.util.ArrayList;
+import java.util.List;
 import ui.*;
 
 /**
@@ -16,6 +17,9 @@ import ui.*;
  * @author luisa
  */
 public class Churreria {
+    // Lista estática para almacenar los pedidos
+
+    private static List<Pedido> listaPedidos = new ArrayList<>();
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -28,11 +32,13 @@ public class Churreria {
         float precioUnitario = miChuro.getChurroPrecio();
         String tipoChurro = miChuro.getChurroNombre();
         int idChurro = miChuro.getChurroId();
-        int unidades = 0;
+        int unidades = 1;
 
         //Incicando número de pedido
         int numeroPedido = 1;
         
+        
+
         // Bucle para mostrar el menú principal
         boolean continuar = true;
         while (continuar) {
@@ -97,13 +103,20 @@ public class Churreria {
                             case 1 -> {
                                 // Acción para confirmar
                                 System.out.println("Pedido confirmado.");
-                                 numeroPedido++;
+                               numeroPedido++;
 
+                                // Asignar la cantidad de churros al pedido
                                 //INSERTAR PEDIDO CONFIRMADO EN LA DB
+                                
                                 Pedido miPedido = new Pedido();
+                                miPedido.setPedidoId(numeroPedido); 
                                 miPedido.setChurroId(idChurro); // imprimiendo churro por ID
+                                miPedido.setPedidoCantidad(unidades);
+                                miPedido.setEstado_Id(1); 
+                                
                                 DbPedido.insertNewPedido(miPedido);
                                 
+
                                 //System.out.printf("\t\t\t\t\n\t\t\t\t| %5s | | %10s | \n", mainMenu.CONFIRMAR, mainMenu.VOLVER);
                                 continuarBoton = false; // Sale del bucle este
                                 //continuar = false;// Sin esto se me vuelve al menu principal de nuevo // creo que debe terminar cuando de opcion
@@ -129,13 +142,12 @@ public class Churreria {
                     //Imprimiendo numero de pedido
                     System.out.printf(mainMenu.nPedido + numeroPedido);
                     
-
                     //Imprimiendo estado 
                     String[] detalleEstado = mainMenu.getDetalleEstado();
                     System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
                     System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
                     System.out.print(mainMenu.ESTADO);
-
+                    
                     //Llamando array de String listaEstado para imprimir el estado -En preparación                           
                     String[] listaEstado = mainMenu.listaEstado;
                     System.out.println(listaEstado[0]);
@@ -159,7 +171,11 @@ public class Churreria {
                     //Llamando array de String listaEstado                                
                     listaEstado = mainMenu.listaEstado;
                     System.out.println(listaEstado[2]);
-                    System.out.println("--------------------------------------------------------------------------------\n");
+                    
+                   
+                      
+                    
+                 System.out.println("--------------------------------------------------------------------------------\n");
                     System.out.printf("%70s\t\t\n", mainMenu.VOLVER_MENU);
 
                     System.out.println("\nCierre provisional hasta configurar los botones");
@@ -179,7 +195,7 @@ public class Churreria {
                     System.out.printf(mainMenu.nPedido);
                     String[] detalleEstado = mainMenu.getDetalleEstado();
                     System.out.printf("\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
-                                   
+
                     System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
 
                 }
