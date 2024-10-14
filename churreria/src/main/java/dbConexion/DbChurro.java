@@ -3,6 +3,8 @@ package dbConexion;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import entidades.Churro;
+import java.sql.SQLException;
+import java.time.LocalDate;
 
 /**
  *
@@ -30,5 +32,21 @@ public abstract class DbChurro {
         }
         return miChurro;
 
+    }
+
+    //Creando el metodo update
+    public static void updatePedido(int numeroPedido, LocalDate fechaHoy, int estado) {
+
+        String sql = "UPDATE `churreria_pretty_woman`.`pedidos`"
+                + " SET `estado_ID` = " + estado + "WHERE `numeroPedido` =" + numeroPedido + "AND fechaPedido = '" + fechaHoy + "'";
+
+        try {
+            churroStatement.executeUpdate(sql);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.out.println("No sepudo actualizar el registro");
+
+        }
     }
 }
