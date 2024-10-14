@@ -9,8 +9,9 @@ public class Pedido {
     //Atributos de la clase Pedido
     private int pedidoId;
     private int churroId;
-    private int bebidaId;
+    
     private int estado_Id;
+    private int pedidoCantidad;
     private static final int ESTADO_ID = 1;
 
     //Constructores
@@ -18,11 +19,13 @@ public class Pedido {
         this.estado_Id = Pedido.ESTADO_ID;
     }
 
-    public Pedido(int pedidoId, int churroId, int bebidaId) {
+    public Pedido(int pedidoId, int churroId, int pedidoCantidad) {
         this.pedidoId = pedidoId;
         this.churroId = churroId;
-        this.bebidaId = bebidaId;
+       
         this.estado_Id = Pedido.ESTADO_ID;
+        this.pedidoCantidad=pedidoCantidad;
+        
     }
 
     //Getters
@@ -34,12 +37,14 @@ public class Pedido {
         return churroId;
     }
 
-    public int getBebidaId() {
-        return bebidaId;
-    }
+
 
     public int getEstado_Id() {
         return estado_Id;
+    }
+    
+    public int getPedidoCantidad(){
+        return this.pedidoCantidad;
     }
 //Setters
 
@@ -51,8 +56,10 @@ public class Pedido {
         this.churroId = churroId;
     }
 
-    public void setBebidaId(int bebidaId) {
-        this.bebidaId = bebidaId;
+  
+    
+    public void setPedidoCantidad(int pedidoCantidad){
+        this.pedidoCantidad=pedidoCantidad;
     }
 
     public void setEstado_Id(int estado_Id) {
@@ -62,7 +69,7 @@ public class Pedido {
 
     @Override
     public String toString() {
-        return "Pedido{" + "pedidoId=" + pedidoId + ", churroId=" + churroId + ", bebidaId=" + bebidaId + ", estado_Id=" + estado_Id + '}';
+        return "Pedido{" + "pedidoId=" + pedidoId + ", churroId=" + churroId + ",pedidoCantidad=" +pedidoCantidad+", estado_Id=" + estado_Id + '}';
     }
 
 }
