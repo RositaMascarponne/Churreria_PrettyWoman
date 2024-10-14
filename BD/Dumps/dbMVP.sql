@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `churreria_pretty_woman` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `churreria_pretty_woman`;
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.36, for Linux (x86_64)
 --
 -- Host: localhost    Database: churreria_pretty_woman
 -- ------------------------------------------------------
--- Server version	8.0.39
+-- Server version	8.4.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +27,7 @@ CREATE TABLE `bebidas` (
   `bebidaNombre` varchar(45) NOT NULL,
   `bebidaPrecio` decimal(6,2) NOT NULL,
   PRIMARY KEY (`bebidaID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -60,7 +58,7 @@ CREATE TABLE `churros` (
   KEY `FK_sabor_id_idx` (`sabor_ID`),
   CONSTRAINT `FK_sabor_id` FOREIGN KEY (`sabor_ID`) REFERENCES `sabores` (`saborID`),
   CONSTRAINT `FK_tipo_id` FOREIGN KEY (`tipo_ID`) REFERENCES `tipos` (`tipoID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +82,7 @@ CREATE TABLE `estados` (
   `estadoID` int NOT NULL AUTO_INCREMENT,
   `estadoNombre` varchar(45) NOT NULL,
   PRIMARY KEY (`estadoID`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,9 +108,12 @@ CREATE TABLE `pedidos` (
   `bebidaID` int DEFAULT NULL,
   `estado_ID` int DEFAULT NULL,
   `pedidoCantidad` int NOT NULL,
+  `numeroPedido` int DEFAULT NULL,
+  `fechaPedido` date DEFAULT NULL,
   PRIMARY KEY (`pedidoID`),
-  KEY `FK_estado_id_idx` (`estado_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
+  KEY `FK_estado_id_idx` (`estado_ID`),
+  CONSTRAINT `estado_Id` FOREIGN KEY (`estado_ID`) REFERENCES `estados` (`estadoID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -121,7 +122,6 @@ CREATE TABLE `pedidos` (
 
 LOCK TABLES `pedidos` WRITE;
 /*!40000 ALTER TABLE `pedidos` DISABLE KEYS */;
-INSERT INTO `pedidos` VALUES (1,11,8,1,0),(2,6,1,2,0),(3,34,3,3,0),(4,6,NULL,1,0),(5,1,NULL,1,0),(6,1,NULL,1,0),(7,1,NULL,1,0),(8,1,NULL,1,0),(9,1,NULL,1,0),(10,1,NULL,1,0),(11,1,NULL,1,10),(12,1,NULL,1,3000),(13,1,NULL,1,900000);
 /*!40000 ALTER TABLE `pedidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +139,7 @@ CREATE TABLE `pedidos_bebidas` (
   KEY `FK_PB_BEBIDAS_idx` (`bebida_id`),
   CONSTRAINT `FK_PB_BEBIDAS` FOREIGN KEY (`bebida_id`) REFERENCES `bebidas` (`bebidaID`),
   CONSTRAINT `FK_PB_PEDIDOS` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos` (`pedidoID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -166,7 +166,7 @@ CREATE TABLE `pedidos_churros` (
   KEY `FK_PC_PEDIDOS_idx` (`pedido_id`),
   CONSTRAINT `FK_PC_CHURROS` FOREIGN KEY (`churro_id`) REFERENCES `churros` (`churroID`),
   CONSTRAINT `FK_PC_PEDIDOS` FOREIGN KEY (`pedido_id`) REFERENCES `pedidos` (`pedidoID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,7 +190,7 @@ CREATE TABLE `sabores` (
   `saborID` int NOT NULL AUTO_INCREMENT,
   `saborNombre` varchar(45) NOT NULL,
   PRIMARY KEY (`saborID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -214,7 +214,7 @@ CREATE TABLE `tipos` (
   `tipoID` int NOT NULL AUTO_INCREMENT,
   `tipoNombre` varchar(45) NOT NULL,
   PRIMARY KEY (`tipoID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,6 +226,10 @@ LOCK TABLES `tipos` WRITE;
 INSERT INTO `tipos` VALUES (1,'Churro'),(2,'Porra'),(3,'Relleno'),(4,'Especial');
 /*!40000 ALTER TABLE `tipos` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'churreria_pretty_woman'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -236,4 +240,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-13 16:32:37
+-- Dump completed on 2024-10-14 22:21:11
