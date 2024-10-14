@@ -32,7 +32,8 @@ public class Churreria {
 
         //Incicando número de pedido
         int numeroPedido = 1;
-        
+        int botonEstado;
+
         // Bucle para mostrar el menú principal
         boolean continuar = true;
         while (continuar) {
@@ -97,13 +98,13 @@ public class Churreria {
                             case 1 -> {
                                 // Acción para confirmar
                                 System.out.println("Pedido confirmado.");
-                                 numeroPedido++;
+                                numeroPedido++;
 
                                 //INSERTAR PEDIDO CONFIRMADO EN LA DB
                                 Pedido miPedido = new Pedido();
                                 miPedido.setChurroId(idChurro); // imprimiendo churro por ID
                                 DbPedido.insertNewPedido(miPedido);
-                                
+
                                 //System.out.printf("\t\t\t\t\n\t\t\t\t| %5s | | %10s | \n", mainMenu.CONFIRMAR, mainMenu.VOLVER);
                                 continuarBoton = false; // Sale del bucle este
                                 //continuar = false;// Sin esto se me vuelve al menu principal de nuevo // creo que debe terminar cuando de opcion
@@ -128,7 +129,6 @@ public class Churreria {
 
                     //Imprimiendo numero de pedido
                     System.out.printf(mainMenu.nPedido + numeroPedido);
-                    
 
                     //Imprimiendo estado 
                     String[] detalleEstado = mainMenu.getDetalleEstado();
@@ -138,8 +138,13 @@ public class Churreria {
 
                     //Llamando array de String listaEstado para imprimir el estado -En preparación                           
                     String[] listaEstado = mainMenu.listaEstado;
-                    System.out.println(listaEstado[0]);
-                    System.out.println("-------------------------------------------------------------------------------- ");
+                    System.out.printf("%10s\t| %5s |\n", listaEstado[0], mainMenu.CONFIRMAR);
+
+                    //Apartado para  habilitar el botón confirmar
+                    botonEstado = sc.nextInt();
+                    System.out.println("El pedido se confirmó");
+
+                    System.out.println("\n-------------------------------------------------------------------------------- ");
                     System.out.println("-------------------------------------------------------------------------------- ");
                     //Imprimiendo Estado de pedido -Listo 
                     System.out.printf(mainMenu.nPedido);
@@ -148,8 +153,8 @@ public class Churreria {
                     System.out.print(mainMenu.ESTADO);
                     //Llamando array de String listaEstado                                
                     listaEstado = mainMenu.listaEstado;
-                    System.out.println(listaEstado[1]);
-                    System.out.println("-------------------------------------------------------------------------------- ");
+                    System.out.printf("%5s\t| %5s |", listaEstado[1], mainMenu.CONFIRMAR);
+                    System.out.println("\n-------------------------------------------------------------------------------- ");
                     System.out.println("-------------------------------------------------------------------------------- ");
                     //Llamando array de Sting ListaEstado para imprimir el estado -Entregado
                     System.out.printf(mainMenu.nPedido);
@@ -158,8 +163,8 @@ public class Churreria {
                     System.out.print(mainMenu.ESTADO);
                     //Llamando array de String listaEstado                                
                     listaEstado = mainMenu.listaEstado;
-                    System.out.println(listaEstado[2]);
-                    System.out.println("--------------------------------------------------------------------------------\n");
+                    System.out.printf("%10s\t| %5s |", listaEstado[2], mainMenu.CONFIRMAR);
+                    System.out.println("\n--------------------------------------------------------------------------------\n");
                     System.out.printf("%70s\t\t\n", mainMenu.VOLVER_MENU);
 
                     System.out.println("\nCierre provisional hasta configurar los botones");
@@ -179,7 +184,7 @@ public class Churreria {
                     System.out.printf(mainMenu.nPedido);
                     String[] detalleEstado = mainMenu.getDetalleEstado();
                     System.out.printf("\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
-                                   
+
                     System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
 
                 }
