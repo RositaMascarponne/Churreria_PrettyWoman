@@ -36,8 +36,6 @@ public class Churreria {
 
         //Incicando número de pedido
         int numeroPedido = 1;
-        
-        
 
         // Bucle para mostrar el menú principal
         boolean continuar = true;
@@ -103,19 +101,17 @@ public class Churreria {
                             case 1 -> {
                                 // Acción para confirmar
                                 System.out.println("Pedido confirmado.");
-                               numeroPedido++;
+                                numeroPedido++;
 
                                 // Asignar la cantidad de churros al pedido
                                 //INSERTAR PEDIDO CONFIRMADO EN LA DB
-                                
                                 Pedido miPedido = new Pedido();
-                                miPedido.setPedidoId(numeroPedido); 
+                                miPedido.setPedidoId(numeroPedido);
                                 miPedido.setChurroId(idChurro); // imprimiendo churro por ID
                                 miPedido.setPedidoCantidad(unidades);
-                                miPedido.setEstado_Id(1); 
-                                
+                                miPedido.setEstado_Id(1);
+
                                 DbPedido.insertNewPedido(miPedido);
-                                
 
                                 //System.out.printf("\t\t\t\t\n\t\t\t\t| %5s | | %10s | \n", mainMenu.CONFIRMAR, mainMenu.VOLVER);
                                 continuarBoton = false; // Sale del bucle este
@@ -135,52 +131,67 @@ public class Churreria {
                     }
                 }
                 case 2 -> {
+                    /*
+                    Para mantenernos dentro de la pantalla y salir de ella con un boton:
+                    1.Creamos una variable booleana y inicializamos en false. 
+                    2.Encapsulamos la "pantalla en un while que se mantendrá mientras la booleana siga en false
+                    3.Ponemos el boton en la ubicación deseada, creamos una variable int de scanner y un 
+                    simple if que al pulsar 1 ca,bie la booleana a true, y PAM!! Rompa el bucle, 
+                    con lo que saldremos de la "pantalla"
+                    Hay que hacer kata de esto...menu in menu mediante bucles controlados por variables booleanas
+                    */
+                    
                     //creando pantalla pedido
                     mainMenu menuEstado = new mainMenu();
-                    menuEstado.pantallaEstado(); // Si quieres ir a otra pantalla después de confirmar
+                    boolean volverAlMenu = false;//Esta booleana nos sirve para mantenernos en esta pantalla
+                    while (!volverAlMenu) { //Bueno, tecnicamente este bucle mantiene esta pantalla
+                        menuEstado.pantallaEstado();
 
-                    //Imprimiendo numero de pedido
-                    System.out.printf(mainMenu.nPedido + numeroPedido);
-                    
-                    //Imprimiendo estado 
-                    String[] detalleEstado = mainMenu.getDetalleEstado();
-                    System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
-                    System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
-                    System.out.print(mainMenu.ESTADO);
-                    
-                    //Llamando array de String listaEstado para imprimir el estado -En preparación                           
-                    String[] listaEstado = mainMenu.listaEstado;
-                    System.out.println(listaEstado[0]);
-                    System.out.println("-------------------------------------------------------------------------------- ");
-                    System.out.println("-------------------------------------------------------------------------------- ");
-                    //Imprimiendo Estado de pedido -Listo 
-                    System.out.printf(mainMenu.nPedido);
-                    System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
-                    System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
-                    System.out.print(mainMenu.ESTADO);
-                    //Llamando array de String listaEstado                                
-                    listaEstado = mainMenu.listaEstado;
-                    System.out.println(listaEstado[1]);
-                    System.out.println("-------------------------------------------------------------------------------- ");
-                    System.out.println("-------------------------------------------------------------------------------- ");
-                    //Llamando array de Sting ListaEstado para imprimir el estado -Entregado
-                    System.out.printf(mainMenu.nPedido);
-                    System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
-                    System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
-                    System.out.print(mainMenu.ESTADO);
-                    //Llamando array de String listaEstado                                
-                    listaEstado = mainMenu.listaEstado;
-                    System.out.println(listaEstado[2]);
-                    
-                   
-                      
-                    
-                 System.out.println("--------------------------------------------------------------------------------\n");
-                    System.out.printf("%70s\t\t\n", mainMenu.VOLVER_MENU);
+                        //Imprimiendo numero de pedido
+                        System.out.printf(mainMenu.nPedido + numeroPedido);
 
-                    System.out.println("\nCierre provisional hasta configurar los botones");
-                    //continuar = false; // Finaliza el bucle principal
+                        //Imprimiendo estado 
+                        String[] detalleEstado = mainMenu.getDetalleEstado();
+                        System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
+                        System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
+                        System.out.print(mainMenu.ESTADO);
+
+                        //Llamando array de String listaEstado para imprimir el estado -En preparación                           
+                        String[] listaEstado = mainMenu.listaEstado;
+                        System.out.println(listaEstado[0]);
+                        System.out.println("-------------------------------------------------------------------------------- ");
+                        System.out.println("-------------------------------------------------------------------------------- ");
+                        //Imprimiendo Estado de pedido -Listo 
+                        System.out.printf(mainMenu.nPedido);
+                        System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
+                        System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
+                        System.out.print(mainMenu.ESTADO);
+                        //Llamando array de String listaEstado                                
+                        listaEstado = mainMenu.listaEstado;
+                        System.out.println(listaEstado[1]);
+                        System.out.println("-------------------------------------------------------------------------------- ");
+                        System.out.println("-------------------------------------------------------------------------------- ");
+                        //Llamando array de Sting ListaEstado para imprimir el estado -Entregado
+                        System.out.printf(mainMenu.nPedido);
+                        System.out.printf("\n\n\t| %5s\t\t\t | %5s |\n\t", detalleEstado[0], detalleEstado[1]);
+                        System.out.printf("%25s%15s\n\n\t\t\t\t", tipoChurro, unidades);
+                        System.out.print(mainMenu.ESTADO);
+                        //Llamando array de String listaEstado                                
+                        listaEstado = mainMenu.listaEstado;
+                        System.out.println(listaEstado[2]);
+                        System.out.println("--------------------------------------------------------------------------------\n");
+                        // Opción para volver al menú principal
+                        System.out.printf("%70s\t\t\n", mainMenu.VOLVER_MENU);
+
+                        int opcionVolver = sc.nextInt();
+
+                        if (opcionVolver == 1) {
+                            volverAlMenu = true; // Salimos del bucle y volvemos al menú principal
+                        }
+
+                    }
                 }
+
                 case 3 -> {
                     //Muestra Pantalla Entrega
                     company = String.format("\n%80s\n", "------------------" + mainMenu.COMPANY + "-------------------");
